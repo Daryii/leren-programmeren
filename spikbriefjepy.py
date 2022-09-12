@@ -58,4 +58,10 @@ if getal == 3: #let op inspringen
     # 2, git commit -a -m "Eerste commit!”
     # 3, git push
     ##########################
+    # voorbeeld van  bereken formaten
     print (f"De feestlunch kost je {aantal*croissantjes + stokbroden*2-korting} euro voor de 17 croissantjes en de 2 stokbroden als de 3 kortingsbonnen nog geldig zijn")
+
+    #################################
+   # VB van Iets vragen 
+naam = input('wat is uw naam?')
+print(f"ja mij naam is:{naam}")
