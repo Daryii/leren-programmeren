@@ -3,8 +3,8 @@
 
 aantal = 17
 croissantjes = 0.39
-stokbroden = 5.56
+stokbroden = 2.78
 korting = 1.50
 
-print (aantal*croissantjes + stokbroden-korting)
+print (aantal*croissantjes + stokbroden*2-korting)
 
