@@ -57,3 +57,5 @@ if getal == 3: #let op inspringen
     # 1, git add. 
     # 2, git commit -a -m "Eerste commit!”
     # 3, git push
+    ##########################
+    print (f"De feestlunch kost je {aantal*croissantjes + stokbroden*2-korting} euro voor de 17 croissantjes en de 2 stokbroden als de 3 kortingsbonnen nog geldig zijn")

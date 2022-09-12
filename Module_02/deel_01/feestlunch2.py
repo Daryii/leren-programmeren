@@ -8,4 +8,4 @@ korting = 1.50
 
 print (aantal*croissantjes + stokbroden*2-korting)
 
-print (f"De feestlunch kost je {aantal*croissantjes + stokbroden*2-korting} euro voor de 17 croissantjes en de 2 stokbroden als de 3 kortingsbonnen nog geldig zijn")
+print (f"De feestlunch kost je {aantal*croissantjes + stokbroden*2-korting} euro voor de  croissantjes en de {aantal} stokbroden als de 3 kortingsbonnen nog geldig zijn")

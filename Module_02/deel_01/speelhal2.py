@@ -3,9 +3,9 @@
 
 aantal = 3
 ppp = 7.45
-Eurocent = 0.37
+eurocent = 0.37
 vip_vr = 9 #  er zijn negen 5 minutenn in 45 min....
 
-print((aantal*ppp) + Eurocent*vip_vr*aantal)
+print((aantal*ppp) + eurocent*vip_vr*aantal)
 
-print (f"Dit geweldige dagje-uit met 3 mensen in de Speelhal met 45 minuten VR kost je maar {(aantal*ppp) + Eurocent*vip_vr*aantal} euro")
+print (f"Dit geweldige dagje-uit met {aantal} mensen in de Speelhal met 45 minuten VR kost je maar {(aantal*ppp) + eurocent*vip_vr*aantal} euro")
