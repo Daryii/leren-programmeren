@@ -28,6 +28,9 @@
 
  ################################################################################################################################################################
 
+from random import Random
+
+
 aantal= 5 #edit is integer, integer is een geheel getal (Int)
 omschrijving = 'milk 2 liter' # edit is een string (str)
 stukjeprijs = 0.89 # edit is een float, float is een getal met een komma
@@ -49,6 +52,9 @@ print(str (aantal) + ' ' + omschrrijving+ ' ' + str(stuksprijs))
 # float,str gebruik je als b.v 0.39 euro te printen
 
  ################################################################################################################################################################
+# Random V.B van Int
+# De ( / 100 )  gebruik je om het string naar een Int te veranderen.
+prijs = int(crossaintjes * crossaintjes_prijs / 100 + stokbroden * stokbroden_prijs / 100 - korting * korting_C / 100)
 
 
 ##################################################################################################################################################################
