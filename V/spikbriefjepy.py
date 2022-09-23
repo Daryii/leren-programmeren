@@ -83,4 +83,10 @@ if platform == 'console':
 
 print (f'U bent {platform}gamer , dan kost de game: {prijs} euro')
 
+# extra if V.B
+if prijs_Iphone_13 > Prijs_Samssung_22:
+    print ("Iphone is duurder")
+elif Prijs_Samssung_22 > prijs_Iphone_13:
+    print("Samsung is duurder")
+ # > betekenit = groter
  ################################################################################################################################################################
