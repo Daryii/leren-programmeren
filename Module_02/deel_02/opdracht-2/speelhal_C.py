@@ -4,7 +4,7 @@
 
 aantal = int(input("vul hier de aantal mensen ="))
 ppp = float(input ("vul hier de prijs per person ="))
-vip_vr = int(input("vul hier de prijs van de vip_vr="))
+vip_vr = float(input("vul hier de prijs van de vip_vr="))
 
 prijs =(aantal*ppp+ vip_vr*aantal)
 

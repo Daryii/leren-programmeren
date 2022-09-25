@@ -11,19 +11,19 @@ Besteling1 = int(input( " Hoeveel small pizza wilt u hebben?:"))
 bestelding2= int(input( " Hoeveel medium pizza wilt u hebben?:"))
 bestelding3 = int(input( " Hoeveel large pizza wilt u hebben?:"))
 
-ant_1= int(small_p * Besteling1)
-ant_2= int (medium_p * bestelding2)
-ant_3= int (large_p * bestelding3)
+ant_1= (small_p * Besteling1)
+ant_2= (medium_p * bestelding2)
+ant_3= (large_p * bestelding3)
 
 totaal= ant_1 + ant_2 + ant_3
 
 print("------------------------------------------")
 print(F"|          Daryi's Pizza                 ")  
 
-print(F"|{Besteling1}  small pizza {ant_1}:Euros")
-print(F"|{bestelding2}  medium pizza {ant_2}:Euros")
-print(F"|{bestelding3}  large pizza {ant_3}:Euros")
-print(f"|Het totaal bedrag is = {totaal} :Euros")
+print(F"|{Besteling1}  small pizza {ant_1} Euros")
+print(F"|{bestelding2}  medium pizza {ant_2} Euros")
+print(F"|{bestelding3}  large pizza {ant_3} Euros")
+print(f"|Het totaal bedrag is = {totaal} Euros")
 
 print("|Dankjewel voor het bestellen")
 print("|------------------------------------------")
