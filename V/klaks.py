@@ -15,3 +15,12 @@ restant= bedrag - 50 * euro_050
 
 
 print (restant)
+
+getal = 0 
+try:
+    getal = int (input("voer een getal in"))
+except ValueError:
+    print("let op : je moet toch een getal involing.")
+
+
+
