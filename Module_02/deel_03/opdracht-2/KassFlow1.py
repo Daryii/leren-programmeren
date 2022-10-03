@@ -28,6 +28,12 @@ if geel == "nee":
             
     elif blauwe_schimmel == "nee":
         korst = input("Heeft de kaas een korst?")
+        ruikt = input ("ruikt het kaas ?")
+        if ruikt == "ja":
+            print ("cemembert")
+        else :
+            print ("brie")
+
         if korst == "ja":
              print ("Camembert") 
         elif korst == "nee":

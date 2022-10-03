@@ -22,3 +22,30 @@ if x == 4 or y == 4:
     print("aap lust noot")
 print(aap)
 print(noot)
+
+
+
+
+
+
+zin = "ayoo"
+x = 0
+for c in (0,1,2):
+    for d in (0,1,2):
+        for x in (0,1,2):
+            x += 1                        # x = x + 1
+            print (zin,c,d,x)
+
+
+hoeveel_pizza =0
+
+prijs = 6,99
+while True:
+    try:
+        hoeveel_pizza = int (input ("hoeveel pizza's wil je hebben"))
+    except ValueError:
+        print ("je moet wel een getal invullen !!!!!!!!!!")
+
+
+    bedrag = hoeveel_pizza * prijs
+

@@ -28,7 +28,7 @@ praktijk = int(input ('Hoeveel jaar ervaring heeft u met dieren-dressuur? '))
 jongleren = int(input('Hoeveel jaar ervaring heeft u met jongleren ?')) 
 acrobatiek = int(input ('Hoeveel jaar ervaring heeft u met acrobatiek ?')) 
  
-ervaring = praktijk > 4 and jongleren > 5 and acrobatiek > 3 
+ervaring = praktijk > 4 or jongleren > 5 or acrobatiek > 3 
 
 if ((geslacht == 'man' and snor == "ja" and size_snor >= 10) or (geslacht == 'vrouw' and krullen == 'ja' and krullen_lengte >= 20)) and diploma == "ja" and vrachtwagen_R == "ja" and hoge_hoed == "ja" and lengte > 150 and gewicht > 90  and Certificaat == 'ja'and ervaring :
     print ("Proficiat! U komt in aanmerking voor een sollicitatiegesprek, stuur snel uw CV!")
