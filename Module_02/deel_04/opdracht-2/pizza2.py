@@ -7,13 +7,17 @@ large_p = 12.99
 
 #Voorbeeld een klant bestelde 1 small , 2 medium en 2 large!
 
+Besteling1 = 0
+bestelding2 = 0
+bestelding3 = 0
 try:
     Besteling1 = int(input(" Hoeveel small pizza wilt u hebben?:"))
     bestelding2= int(input(" Hoeveel medium pizza wilt u hebben?:"))
     bestelding3 = int(input(" Hoeveel large pizza wilt u hebben?:"))
 except ValueError:
+    print("Vul een getal in :")
 
-    ant_1= (small_p * Besteling1)
+ant_1= (small_p * Besteling1)
 ant_2= (medium_p * bestelding2)
 ant_3= (large_p * bestelding3)
 
