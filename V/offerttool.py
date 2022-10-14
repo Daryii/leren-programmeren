@@ -4,7 +4,7 @@ breedte = int(input("Voer hier de breedte in:"))
 diepte = float(input("Voer hier de diepte in:"))
 km = int(input("Voer hier de km's in:"))
 
-inhoudzwembad = {hoogte*breedte*diepte} 
+inhoudzwembad = int(hoogte*breedte*diepte)
 afvoeren_g = {hoogte*breedte*diepte*32.50}
 uitgraven = {hoogte*breedte*diepte*25}
 voorrijkosten = {km*1.15+100}
@@ -20,7 +20,7 @@ elif km < 50 and inhoudzwembad > 20 :
 else:
     print( 250+2.03)
 
-print (f"Offerte als volgt uit :",inhoudzwembad,"m3")
+print (f"Aantal m3 grond om uit te gaven is:",inhoudzwembad,"m3")
 print ("Uitgraven: €",uitgraven,"")
 print ("Afvoeren grond: €",afvoeren_g,"")
 print ("Voorrijkosten: €",voorrijkosten,"")
