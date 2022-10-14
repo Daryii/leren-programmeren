@@ -1,10 +1,10 @@
 
-hoogte = int(input("Voe r hier de hoogte in:"))
-breedte = int(input("Voer hier de breedte in:"))
+hoogte = float(input("Voer hier de hoogte in:"))
+breedte = float(input("Voer hier de breedte in:"))
 diepte = float(input("Voer hier de diepte in:"))
 km = int(input("Voer hier de km's in:"))
 
-inhoudzwembad = int(hoogte*breedte*diepte)
+inhoudzwembad = int( hoogte*breedte*diepte)
 afvoeren_g = {hoogte*breedte*diepte*32.50}
 uitgraven = {hoogte*breedte*diepte*25}
 voorrijkosten = {km*1.15+100}
