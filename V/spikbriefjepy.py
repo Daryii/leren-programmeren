@@ -154,3 +154,12 @@ naam = input("wat is je naam ? ")
 print ("jouw naam is "+ naam +".")
 
 #################################################################################################################################################################
+tel = 0
+yo = " "
+
+while yo != "st":
+    yo = input("vul stop om te stoppen")
+    tel += 300
+    print (tel)
+
+print (f"aantal enter:{tel}")
