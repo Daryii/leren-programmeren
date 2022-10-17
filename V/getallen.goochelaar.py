@@ -1,9 +1,14 @@
-tel = 0
+from pickletools import TAKEN_FROM_ARGUMENT4
 
 
-while tel <= 10:
-    tel += 1
-    print (tel)
+gastheer = input("Wie is de gastheer?")
+gasten =20
+drank = True
+chips= True
 
-for  y in range(11):
-    print (y)
+aanwezigen = gasten if gastheer == '' else +1
+
+if gastheer == gastheer != "corbijn" and (gastheer == "daryi" or  (drank and (gasten >=4 and gastheer or gasten <=20 and aanwezigen))) and (aanwezigen):
+    print ("start the Party")
+else:
+    print("No Party")

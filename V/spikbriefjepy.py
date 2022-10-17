@@ -155,11 +155,17 @@ print ("jouw naam is "+ naam +".")
 
 #################################################################################################################################################################
 tel = 0
-yo = " "
 
-while yo != "st":
-    yo = input("vul stop om te stoppen")
-    tel += 300
+
+while tel <= 10:
+    tel += 1
     print (tel)
 
-print (f"aantal enter:{tel}")
+for  y in range(11):
+    print (y)
+
+
+from time import sleep
+
+delay = 1
+ #sleep(delay)
