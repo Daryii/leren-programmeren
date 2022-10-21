@@ -2,74 +2,76 @@ from RobotArm import RobotArm
 
 robotArm = RobotArm('exercise 4')
 
-robotArm.speed = 5
+robotArm.speed = 3
 
-for i in range(9):
-    robotArm.grab()
-    robotArm.moveRight()
-    robotArm.drop()
-for z in range(9):
-    robotArm.moveLeft()
-for i in range(8):
-    robotArm.grab()
-    robotArm.moveRight()
-    robotArm.drop()
-for z in range(8):
-    robotArm.moveLeft()
-for i in range(7):
-    robotArm.grab()
-    robotArm.moveRight()
-    robotArm.drop()
-for z in range(7):
-    robotArm.moveLeft()
-for i in range(6):
-    robotArm.grab()
-    robotArm.moveRight()
-    robotArm.drop()
-    
-for z in range(6):
-    robotArm.moveLeft()
-for i in range(5):
-    robotArm.grab()
-    robotArm.moveRight()
-    robotArm.drop()
-for z in range(5):
-    robotArm.moveLeft()
-for e in range(5):
-    robotArm.moveRight()
+
 robotArm.grab()
-for e in range(4):
+for e in range(1,10):
+    robotArm.moveRight()
+robotArm.drop()
+for e in range(1,10):
     robotArm.moveLeft()
+
+robotArm.grab()
+for e in range(1,10):
+    robotArm.moveRight()
+robotArm.drop()
+for e in range(1,10):
+    robotArm.moveLeft()
+
+robotArm.grab()
+for e in range(1,10):
+    robotArm.moveRight()
+robotArm.drop()
+for e in range(1,10):
+    robotArm.moveLeft()
+
+robotArm.grab()
+for e in range(1,10):
+    robotArm.moveRight()
+robotArm.drop()
+for e in range(1,10):
+    robotArm.moveLeft()
+
+robotArm.grab()
+for e in range(1,10):
+    robotArm.moveRight()
 robotArm.drop()
 
-for e in range(5):
-    robotArm.moveRight()
 robotArm.grab()
-for e in range(5):
+for f in range(1,9):
     robotArm.moveLeft()
 robotArm.drop()
-
-for z in range(6):
+for d in range(1,9):
     robotArm.moveRight()
+
 robotArm.grab()
-for e in range(6):
+for f in range(1,9):
     robotArm.moveLeft()
 robotArm.drop()
-
-for z in range(7):
+for d in range(1,9):
     robotArm.moveRight()
+
 robotArm.grab()
-for e in range(7):
+for f in range(1,9):
     robotArm.moveLeft()
 robotArm.drop()
-
-for z in range(8):
+for d in range(1,9):
     robotArm.moveRight()
+
 robotArm.grab()
-for e in range(8):
+for f in range(1,9):
     robotArm.moveLeft()
 robotArm.drop()
+for d in range(1,9):
+    robotArm.moveRight()
 
+robotArm.grab()
+for f in range(1,9):
+    robotArm.moveLeft()
+robotArm.drop()
+for d in range(1):
+    robotArm.moveRight()
 
 
 robotArm.wait()

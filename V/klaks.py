@@ -1,26 +1,90 @@
-bedrag = int(input("voer bedrag in :"))
+i = 1
+while i <= 14:
+    print(i)
+    if i == 9:
+        break
+    i = i +1
 
-euro_2 = bedrag // 200
-print (f"aantal 2 euro :{euro_2}")
-restant= bedrag - 200 * euro_2
-
-euro_1 = restant // 100 
-print (f'aantal 1 euro:{euro_1}')
-restant = bedrag - 100 * euro_1
-
-
-euro_050 = bedrag // 50
-print (f'aantal 50 cent :{euro_050}')
-restant= bedrag - 50 * euro_050
+for i in range(1,7):
+    print (i)
 
 
-print (restant)
+    from RobotArm import RobotArm
 
-getal = 0 
-try:
-    getal = int (input("voer een getal in"))
-except ValueError:
-    print("let op : je moet toch een getal involing.")
+robotArm = RobotArm('exercise 4')
+
+robotArm.speed = 3
+
+for i in range(5):
+    robotArm.grab()
+    for d in range(5):
+        robotArm.moveRight()
+
+for z in range(9):
+    robotArm.moveLeft()
+for i in range(8):
+    robotArm.grab()
+    robotArm.moveRight()
+    robotArm.drop()
+    
+for z in range(8):
+    robotArm.moveLeft()
+for i in range(7):
+    robotArm.grab()
+    robotArm.moveRight()
+    robotArm.drop()
+for z in range(7):
+    robotArm.moveLeft()
+for i in range(6):
+    robotArm.grab()
+    robotArm.moveRight()
+    robotArm.drop()
+    
+for z in range(6):
+    robotArm.moveLeft()
+for i in range(5):
+    robotArm.grab()
+    robotArm.moveRight()
+    robotArm.drop()
+    
+for z in range(5):
+    robotArm.moveLeft()
+    
+for e in range(5):
+    robotArm.moveRight()
+robotArm.grab()
+for e in range(4):
+    robotArm.moveLeft()
+robotArm.drop()
+
+for e in range(5):
+    robotArm.moveRight()
+robotArm.grab()
+for e in range(5):
+    robotArm.moveLeft()
+robotArm.drop()
+
+for z in range(6):
+    robotArm.moveRight()
+robotArm.grab()
+for e in range(6):
+    robotArm.moveLeft()
+robotArm.drop()
+
+for z in range(7):
+    robotArm.moveRight()
+robotArm.grab()
+for e in range(7):
+    robotArm.moveLeft()
+robotArm.drop()
+
+for z in range(8):
+    robotArm.moveRight()
+robotArm.grab()
+for e in range(8):
+    robotArm.moveLeft()
+robotArm.drop()
 
 
 
+robotArm.wait()
