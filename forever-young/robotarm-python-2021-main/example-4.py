@@ -4,73 +4,19 @@ robotArm = RobotArm('exercise 4')
 
 robotArm.speed = 3
 
-
-robotArm.grab()
-for e in range(1,10):
+for r in range(5):
+    robotArm.grab()
     robotArm.moveRight()
-robotArm.drop()
-for e in range(1,10):
-    robotArm.moveLeft()
-
-robotArm.grab()
-for e in range(1,10):
     robotArm.moveRight()
-robotArm.drop()
-for e in range(1,10):
-    robotArm.moveLeft()
+    robotArm.drop()
+    if r != 4:
+        for i in range(2): 
+            robotArm.moveLeft()
 
-robotArm.grab()
-for e in range(1,10):
-    robotArm.moveRight()
-robotArm.drop()
-for e in range(1,10):
+for u in range(5):
+    robotArm.grab()
     robotArm.moveLeft()
-
-robotArm.grab()
-for e in range(1,10):
-    robotArm.moveRight()
-robotArm.drop()
-for e in range(1,10):
-    robotArm.moveLeft()
-
-robotArm.grab()
-for e in range(1,10):
-    robotArm.moveRight()
-robotArm.drop()
-
-robotArm.grab()
-for f in range(1,9):
-    robotArm.moveLeft()
-robotArm.drop()
-for d in range(1,9):
-    robotArm.moveRight()
-
-robotArm.grab()
-for f in range(1,9):
-    robotArm.moveLeft()
-robotArm.drop()
-for d in range(1,9):
-    robotArm.moveRight()
-
-robotArm.grab()
-for f in range(1,9):
-    robotArm.moveLeft()
-robotArm.drop()
-for d in range(1,9):
-    robotArm.moveRight()
-
-robotArm.grab()
-for f in range(1,9):
-    robotArm.moveLeft()
-robotArm.drop()
-for d in range(1,9):
-    robotArm.moveRight()
-
-robotArm.grab()
-for f in range(1,9):
-    robotArm.moveLeft()
-robotArm.drop()
-for d in range(1):
+    robotArm.drop()
     robotArm.moveRight()
 
 

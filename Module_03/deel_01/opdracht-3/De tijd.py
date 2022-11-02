@@ -1,6 +1,7 @@
 
-for i in range (1,13):
-    print(F" {i} uue in am ")
+for e in range(1,25):
+    if e > 12:
+        print(F" {e-12} uur in pm ")
+    else:
+        print (F" {e} uur in am ")
 
-for e in range (13,24):
-    print(F" {e} uur in pm ")
