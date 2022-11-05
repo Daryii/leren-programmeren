@@ -1,6 +1,8 @@
-d = 2
+vraag=""
+teller=0
 
-while d == 2:
+while vraag != "quit":
     vraag = input("?")
-    if vraag == "quit": break
+    teller= teller+1
 
+print(teller)
