@@ -1,90 +1,17 @@
-i = 1
-while i <= 14:
-    print(i)
-    if i == 9:
-        break
-    i = i +1
+i = "HVqxBjoZ!?GkqdeOEezAE!?ohNjqRuxojy!?esAX!?dLsZc!? VcpGtt!?gOxjFQkzTDy!?etEyySXt!?dMVfSG!?akOgOdFpje!?aZpjG!?nydTfnQ!q!? nmanp!?aCa!?lIYeTdIl!?l!yYZyVI!?eOm!?mfcBM!?aNteYpX!?aGFlGtW!?lSy!XYh!?,TfgEb!? uD K!?oqpjKodZrz!?mEm r!?ddo!?aFUpe!qwj!?tvZo!? qKBspNfS!?iQXfEoo!?kGSdJlWh!? VTKzOZq!?jdSLdJdKAv!?aVTKun!?rQEvJ!?ictXgAKZY!?gbIdxqGSp!? aEfGvYgv!?bWgDdYZ!?eB !?ngAt!!? D qLljmm!?vhtTdpIqoJZ!?oQyJXBHX!?lupz!?gYAVXXNg!?taWDDVBQDSO!? BQO HIOZLY!?eoTXtn!?eyR!?nYZkIf!?  OrFk!?kJenGc!?lElWj!?e hOwVlpWz!?iVF!?nu odOVXvSP!?ebinLp!? fRwfXGQs!?tWdfhPh!?ruTvo!!?aHBj!PZaHtQ!?kYYk!?tWeNjDqV!?aFMctpAli!?tnIz!?ivq!?eGRNQq!?!KbotZVm"
+next = False
+uitroep= False
+vraagteken = False
+decryted = ""
 
-for i in range(1,7):
-    print (i)
+for d in i:
 
+    if next:
+        decryted += d
+        next = False
 
-    from RobotArm import RobotArm
+    vraagteken = d == "?"
+    next = vraagteken and uitroep
+    uitroep = d == "!"
 
-robotArm = RobotArm('exercise 4')
-
-robotArm.speed = 3
-
-for i in range(5):
-    robotArm.grab()
-    for d in range(5):
-        robotArm.moveRight()
-
-for z in range(9):
-    robotArm.moveLeft()
-for i in range(8):
-    robotArm.grab()
-    robotArm.moveRight()
-    robotArm.drop()
-    
-for z in range(8):
-    robotArm.moveLeft()
-for i in range(7):
-    robotArm.grab()
-    robotArm.moveRight()
-    robotArm.drop()
-for z in range(7):
-    robotArm.moveLeft()
-for i in range(6):
-    robotArm.grab()
-    robotArm.moveRight()
-    robotArm.drop()
-    
-for z in range(6):
-    robotArm.moveLeft()
-for i in range(5):
-    robotArm.grab()
-    robotArm.moveRight()
-    robotArm.drop()
-    
-for z in range(5):
-    robotArm.moveLeft()
-    
-for e in range(5):
-    robotArm.moveRight()
-robotArm.grab()
-for e in range(4):
-    robotArm.moveLeft()
-robotArm.drop()
-
-for e in range(5):
-    robotArm.moveRight()
-robotArm.grab()
-for e in range(5):
-    robotArm.moveLeft()
-robotArm.drop()
-
-for z in range(6):
-    robotArm.moveRight()
-robotArm.grab()
-for e in range(6):
-    robotArm.moveLeft()
-robotArm.drop()
-
-for z in range(7):
-    robotArm.moveRight()
-robotArm.grab()
-for e in range(7):
-    robotArm.moveLeft()
-robotArm.drop()
-
-for z in range(8):
-    robotArm.moveRight()
-robotArm.grab()
-for e in range(8):
-    robotArm.moveLeft()
-robotArm.drop()
-
-
-
-robotArm.wait()
+print(decryted)
