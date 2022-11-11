@@ -2,8 +2,18 @@ from RobotArm import RobotArm
 
 robotArm = RobotArm('exercise 11')
 
-# Jouw python instructies zet je vanaf hier:
+i = 0
 
-robotArm.loadLevel('exercise 1')
-# Na jouw code wachten tot het sluiten van de window:
+while i < 9:
+    robotArm.grab()
+    if robotArm.scan() == "white":
+        i = i +1
+        robotArm.moveRight()
+    robotArm.drop()
+    robotArm.moveRight()
+    i = i +1
+
+   
+
+
 robotArm.wait()
