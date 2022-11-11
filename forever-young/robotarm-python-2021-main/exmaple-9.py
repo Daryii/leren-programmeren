@@ -1,14 +1,15 @@
 from RobotArm import RobotArm
 robotArm = RobotArm('exercise 9')
+robotArm.speed = 4
 
-for e in range(11):
+for s in range(1, 5):
+  for b in range(s):
     robotArm.grab()
-    for u in range(5):
-        robotArm.moveRight()
+    for m in range(5):
+      robotArm.moveRight()
     robotArm.drop()
-    for h in range(5):
+    for m in range(5 - int(b == s - 1)):
         robotArm.moveLeft()
-    if robotArm.grab() == False:
-        robotArm.moveRight()
-        
+
+
 robotArm.wait()
