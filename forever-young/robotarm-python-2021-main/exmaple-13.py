@@ -3,13 +3,16 @@ from RobotArm import RobotArm
 robotArm = RobotArm()
 robotArm.randomLevel(1,7)
 
-for u in range(9):
+z =1
+
+while z < 9: 
     robotArm.grab()
-    for u in range(1 + u):
+    if robotArm.scan() == '':
+        break
+    for f in range(z):
         robotArm.moveRight()
     robotArm.drop()
-    for e in range(1 + u):
+    for d in range(z):
         robotArm.moveLeft()
-    if robotArm.grab() == False:
-        break
+    z = z +1
 robotArm.wait()
