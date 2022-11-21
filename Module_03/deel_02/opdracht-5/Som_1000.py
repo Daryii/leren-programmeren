@@ -4,6 +4,6 @@ ans= 50
 
 while ans < 1000:
     s = s + 1
-    w = f"{s}+{w}"
+    w = f"{w}+{s}"
     ans= ans + s
     print(f"{w}={ans}")
