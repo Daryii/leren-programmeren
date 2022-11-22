@@ -1,9 +1,14 @@
-dagen = ["maandag", "dinsdag", "woensdag", "donderdag", "vrijdag", "zaterdag", "zondag"]
+dagen = ["maandag","dinsdag","woensdag","donderdag","vrijdag","zaterdag","zondag"]
 
-dag = int(input("kies een dag van de week ?")) #maar dan met een cijfer b.v maandag = 1 en donderdag = 4 etc ... 
-d = 0
+dag = input("kies een dag van de week ?") # maar dan met een cijfer b.v maandag = 1 en donderdag = 4 etc ... 
 
-while d < dag:
-    print(dagen[d])
-    d = d + 1
-    
+s =7
+w =0
+
+while w < s:
+    daz = dagen[w]
+    if dag == daz:
+        break
+    print(daz)
+    w = w + 1
+

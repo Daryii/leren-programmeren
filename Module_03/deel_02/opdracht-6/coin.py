@@ -35,30 +35,43 @@ if change > 0: # Als de change meer dan 0 is begint de programma.
       
 # comment on code below: Hier gaat die langs alle coinvalue's
     if coinValue == vijfEuro:
-      coinValue = vijfEuro
-    elif coinValue == tweeEuro:
+      dizz = nrCoinsReturned
       coinValue = tweeEuro
-    elif coinValue == eenEuro:
+    elif coinValue == tweeEuro:
+      dizz1 = nrCoinsReturned
       coinValue = eenEuro
-    elif coinValue == vijftigCent:
+    elif coinValue == eenEuro:
+      dizz2 = nrCoinsReturned
       coinValue = vijftigCent
-    elif coinValue == twintigCent:
+    elif coinValue == vijftigCent:
+      dizz3 = nrCoinsReturned
       coinValue = twintigCent
-    elif coinValue == tienCent:
+    elif coinValue == twintigCent:
+      dizz4 = nrCoinsReturned
       coinValue = tienCent
-    elif coinValue == vijfCent:
+    elif coinValue == tienCent:
+      dizz5 = nrCoinsReturned
       coinValue = vijfCent
-    elif coinValue == eenCent:
-        coinValue = vijfCent
+    elif coinValue == vijfCent:
+      dizz6 = nrCoinsReturned
+      coinValue = eenCent
     else:
         coinValue = 0
 
-
+try:
   if change > 0: # Hier wordt gecontrollerd of de change groter is dan 0
       print('Change not returned: ', str(change) + ' cents')
   else:
     print("done")
-
+    print(f"{vijfEuro}: {dizz}")
+    print(f"{tweeEuro}: {dizz1}")
+    print(f"{eenEuro}: {dizz2}")
+    print(f"{vijftigCent}: {dizz3}")
+    print(f"{twintigCent}: {dizz4}")
+    print(f"{tienCent}: {dizz5}")
+    print(f"{vijfCent}: {dizz6}")
+except NameError:
+  exit()
 
 
 
