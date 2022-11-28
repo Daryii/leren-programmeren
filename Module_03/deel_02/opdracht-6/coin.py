@@ -15,6 +15,14 @@ tienCent = 10
 vijfCent = 5
 eenCent = 1
 
+dizz = 0
+dizz1 = 0
+dizz2 = 0
+dizz3 = 0
+dizz4 = 0
+dizz5 = 0
+dizz6 = 0
+
 
 toPay = int(float(input('Amount to pay: '))* 100) # Bedrag dat betaald moet worden.
 paid = int(float(input('Paid amount: ')) * 100) # Bedrag dat betaald is.
@@ -32,7 +40,6 @@ if change > 0: # Als de change meer dan 0 is begint de programma.
       nrCoinsReturned = int(input('How many coins of ' + str(coinValue) +  ' cents did you return? ')) # Hier vraagt die hoeveel coins je wilt geven
       change -= nrCoinsReturned * coinValue #Change is - De aantal coins dat ingevoerd is keer de coinvalue
 
-      
 # comment on code below: Hier gaat die langs alle coinvalue's
     if coinValue == vijfEuro:
       dizz = nrCoinsReturned
@@ -58,7 +65,7 @@ if change > 0: # Als de change meer dan 0 is begint de programma.
     else:
         coinValue = 0
 
-try:
+
   if change > 0: # Hier wordt gecontrollerd of de change groter is dan 0
       print('Change not returned: ', str(change) + ' cents')
   else:
@@ -66,12 +73,9 @@ try:
     print(f"{vijfEuro}: {dizz}")
     print(f"{tweeEuro}: {dizz1}")
     print(f"{eenEuro}: {dizz2}")
-    print(f"{vijftigCent}: {dizz3}")
-    print(f"{twintigCent}: {dizz4}")
+    print(f"{vijftigCent}:{dizz3}")
+    print(f"{twintigCent}:{dizz4}")
     print(f"{tienCent}: {dizz5}")
     print(f"{vijfCent}: {dizz6}")
-except NameError:
-  exit()
-
 
 

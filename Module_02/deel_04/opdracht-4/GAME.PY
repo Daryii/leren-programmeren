@@ -1,4 +1,4 @@
-print("Hallo ,Welkom bij Munch!")
+print("Hallo,Welkom bij Munch!")
 
 ans =input ("Ben je ready om te spelen (ja/nee)? :")
 score = 0
@@ -92,7 +92,7 @@ if ans.lower () == "ja":
             print("jij bent een ezel")
 
 
-    print ('Dankjewel voor spelen jij hebt' ,score,"vragen goed. ")
+    print ('Dankjewel voor spelen jij hebt' ,score,"van de 9 vragen goed. ")
     mark = (score/total_P) * 100
 
     print("Mark:",str(mark) +'%' )
