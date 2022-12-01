@@ -18,8 +18,13 @@
 # for i in range(0,5):
 #     print(i)
 
-u = 0
+# u = 0
 
-while u < 5:
-    print(u)
-    u = u + 1
+# while u < 5:
+#     print(u)
+#     u = u + 1
+
+
+
+c = abs(-129)
+print(c)
