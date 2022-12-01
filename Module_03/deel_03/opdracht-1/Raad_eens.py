@@ -40,6 +40,5 @@ for u in range(20):
         exit()
     else:
         print(f"je hebt {score} van {ronde}")
-
-print(f"je score is {score} en je hebt {ronde} rondes gespeeld")
+        print(f"je score is {score} en je hebt {ronde} rondes gespeeld")
 
