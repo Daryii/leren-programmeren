@@ -31,18 +31,14 @@ if vraag == ("ja"):
                     print("je bent heel warm!")
                 elif verschil <= 50:
                     print("je bent warm!")
-        
-        ja_of_nee = input("wil je nog een keer raden ja of nee?: ")
         ronde += 1
-        if ronde == 20:
-            ja_of_nee: exit() 
-        if ja_of_nee == "nee":
-            print("Game over !")
-            ronde = 20
-
-        else:
-            print(f"je hebt {score} van {ronde}")
-            print(f"je score is {score} en je hebt {ronde} rondes gespeeld")
+        if ronde < 20:
+            ja_of_nee = input("wil je nog een keer raden ja of nee?: ")
+            if ja_of_nee == "nee":
+                ronde = 20
+            
+        print(f"je hebt {score} van {ronde}")
+        print(f"je score is {score} en je hebt {ronde} rondes gespeeld")
             
 else:
     print("GAME OVER!!")
