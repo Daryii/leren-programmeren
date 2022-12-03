@@ -26,5 +26,18 @@
 
 
 
-c = abs(-129)
-print(c)
+# mijn_lijst=["anton","berat","daei","jshs"]
+# leeftijd =[15,14,12,14,17]
+
+# for u,leeftijd  in zip(mijn_lijst,leeftijd):
+#     print("Hallo",u,"je bent",leeftijd,"oud")
+
+
+# mijn_lijst=["anton","berat","daei","jshs"]
+# leeftijd =[15,14,12,14,17]
+
+# for positie, u  in enumerate(mijn_lijst):
+#     print(positie)
+#     print("Hallo",u,"je bent",leeftijd[positie],"oud")
+
+    
