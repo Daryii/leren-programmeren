@@ -1,21 +1,21 @@
 zak = {}
 
+getal = 1
+
 while True:
-    product = input("Voeg item toe ? :").lower
+    product = input("Voeg item toe ? :")
     if product in zak:
-        zak
-        #hoeveelheid= int(input(f"Hoeveel {product} wil je?: "))
-    
-    getal = 1
-    if product and hoeveelheid not in zak:
-        zak.update({hoeveelheid: product})
-    elif product and hoeveelheid in zak:
-        zak[product and hoeveelheid] +=1
-        
-    print(" -[ BOODSCHAPPENLIJST ]- ")
-    for key,value in  zak.items():
-        print(key,value)
-        print(f"{value}x {key}")
+        zak[product] += 1
+    else:
+        zak.update({product : getal})
+    voeg_product = input("wil je nog een product toe: ")
+    if voeg_product == "ja":
+        continue
+    else:
+        break
+print(" -[ BOODSCHAPPENLIJST ]- ")
+for key,value in  zak.items():
+    print(f"{value}x {key}")
     print("-----------------------")
    
 

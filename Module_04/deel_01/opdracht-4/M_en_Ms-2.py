@@ -11,6 +11,6 @@ for u in range(vraag):
         zak.update({random_k: getal})
     elif random_k in zak:
         zak[random_k] +=1
-        
+print(len(zak))    
 print(zak)
 
