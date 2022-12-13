@@ -15,7 +15,7 @@ while True:
         break
 print(" -[ BOODSCHAPPENLIJST ]- ")
 for key,value in  zak.items():
-    print(f"{value}x {key}")
+    print(f"{value} x {key}")
     print("-----------------------")
    
 
