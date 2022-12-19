@@ -6,9 +6,9 @@ fruitmand.append({
     'color' : 'green',
     'round' : True
 })
-fruit =""
 
-gewicht = [(fruit["weight"])
-for fruit in fruitmand 
-    if 'weight'in fruit]
-print(sum(gewicht))
+total_weight = 0
+
+for fruit in fruitmand:
+    total_weight += fruit["weight"]
+    print((total_weight))

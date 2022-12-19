@@ -1,7 +1,7 @@
 from fruitmand import fruitmand
 from operator import itemgetter
 
-newlist = sorted(fruitmand,key=itemgetter("weight"))
+nieuw_list = sorted(fruitmand,key=itemgetter("weight"))
 
 for fruit in fruitmand:
     print("fruitsoort :",fruit["name"])

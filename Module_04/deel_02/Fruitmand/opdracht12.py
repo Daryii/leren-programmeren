@@ -1,3 +1,16 @@
 from fruitmand import*
 
-print(f"de",fruitmand[2]["name"],"(11 letters) heeft een",fruitmand[2]["color"],"en een",fruitmand[2]["weight"],"van",fruitmand[2]["weight"]/1000)
+lengte = 0
+longest_fruit = {}
+
+kleuren_dict = {"yellow" : "geel" ,"green":"groen","orange":"oranje","red":"rood","brown":"bruin"}
+
+for fruit in fruitmand:
+    if len(fruit["name"]) > lengte:
+        lengte = len(fruit["name"])
+        longest_fruit = fruit
+
+print(f"de",longest_fruit['name'],(lengte),"heeft een",kleuren_dict[longest_fruit['color']],"kleur","en een","gewicht","van",longest_fruit["weight"]/1000,"kg.")
+
+
+

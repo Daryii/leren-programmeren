@@ -1,3 +1,3 @@
-from fruitmand import fruitmand
+from fruitmand import *
 
 print(fruitmand)
