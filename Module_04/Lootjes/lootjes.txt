@@ -1,0 +1,17 @@
+Aan het begin van de game wordt je gevraagde als u lootjes wil gaan trekken? 
+
+Als u ja zegt, gaat het programma door en als u nee zegt, stopt het programma.
+
+Vervolgens wordt je gevraagde om de namen vam de deelnamers in te voeren 
+en als u klaar bent met het invoeren type "klaar" 
+
+Als u geen klaar hebt ingevoerde, wordt u opnieuw gevraagd de namen van de deelnemers in te voeren
+
+hierna wordt er gecontrolered als alle ingevoerde namen unike zijn, zo niet
+dan wordt u opnieuw gevraagde om de namen van de deelnamers in te voeren tot het wel unike is .
+
+na de conrtole worden dezelfde namen in twee vershillende lijsten toegevoegd
+
+na de toevoeging worden de lijsten geshuffeld totdat niemand het lootje van zichzelf hebt 
+
+en uiteindelijk, als alle namen goed zijn geschuffeld wordt alles verdeeld en worden de bijbehorende loten geprint.

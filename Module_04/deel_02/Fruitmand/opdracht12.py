@@ -12,5 +12,3 @@ for fruit in fruitmand:
 
 print(f"de",longest_fruit['name'],(lengte),"heeft een",kleuren_dict[longest_fruit['color']],"kleur","en een","gewicht","van",longest_fruit["weight"]/1000,"kg.")
 
-
-
