@@ -1,4 +1,5 @@
-def frunction_town():
-    print("Hello from function town")
+def frunction_town(num):
+    for i in range(1,num+1):
+        print("Hello from function town",[i],"!")
 
-frunction_town()
+frunction_town(7)
