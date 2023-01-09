@@ -1,5 +1,5 @@
 import random 
-import copy
+
 
 namen_lijst_1 = []
 namen_lijst_2 = []
@@ -12,25 +12,21 @@ if Vraag == "ja":
         if namen == "klaar":
             break
         namen_lijst_1.append(namen)
-        namen_lijst_2 = copy.copy(namen_lijst_1)
+        namen_lijst_2 = list(set(namen_lijst_1))
+
         print(namen_lijst_1)
 else:   
     exit()
    
 if len(namen_lijst_1) < 3:
-    print("Alle opgegeven namen zijn minder dan drie ")
+    print("Opgegeven namen zijn minder dan drie of al ingevoerd")
 
 elif len(namen_lijst_1) > len(set(namen_lijst_1)):
-    print("Uw hebt deze naam al ingevoerd ")   
+    print("Opgegeven namen zijn minder dan drie of al ingevoerd")   
 else:
-    for i in range(len(namen_lijst_1)):
-        random.shuffle(namen_lijst_1)
-        if namen_lijst_1 == namen_lijst_2:
-            break
-        else:
-            print(f"{namen_lijst_1[i]} heeft {namen_lijst_2[i]} getrokken")
-            
-
+    random.shuffle(namen_lijst_1)
+    for j in range(len(namen_lijst_1)):
+        print(f"{namen_lijst_1[j]} heeft {namen_lijst_2[j]} getrokken")
             
 
             
