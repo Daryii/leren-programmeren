@@ -1,36 +1,31 @@
-import random 
-
-
-namen_lijst_1 = []
-namen_lijst_2 = []
-
-Vraag = input("Wil uw lootjes trekken?: ")
-if Vraag == "ja":
+import random
+namen = []
+namen2 = []
+teller = 0
+vraag = input("Wilt u lootjes trekken?: ").lower()
+if vraag == "ja":
     while True:
-        namen = input("Voer hier de namen van de deelnamers, en type ( klaar ) als je klaar bent: ")
-
-        if namen == "klaar":
-            break
-        namen_lijst_1.append(namen)
-        namen_lijst_2 = list(set(namen_lijst_1))
-
-        print(namen_lijst_1)
-else:   
-    exit()
-   
-if len(namen_lijst_1) < 3:
-    print("Opgegeven namen zijn minder dan drie of al ingevoerd")
-
-elif len(namen_lijst_1) > len(set(namen_lijst_1)):
-    print("Opgegeven namen zijn minder dan drie of al ingevoerd")   
+        name = input("Voer een naam in (voer 'klaar' in om lootjes te trekken): ")
+        if name == 'klaar':
+            if len(namen) < 3:
+                print("Er zijn minder dan 3 namen ingevoerd. Voer minimaal 3 namen in om lootjes te kunnen trekken.")
+                continue
+            else:
+                break
+        elif name in namen2:
+            print("Deze naam is al ingevoerd. Voer een unieke naam in.")
+        else:            
+            namen.append(name)
+            namen2 = list(namen)
 else:
-    random.shuffle(namen_lijst_1)
-    for j in range(len(namen_lijst_1)):
-        print(f"{namen_lijst_1[j]} heeft {namen_lijst_2[j]} getrokken")
-            
-
-            
-
-
-
-
+    exit()
+while True:
+    if namen[teller] == namen2[teller]:
+        random.shuffle(namen2)
+        teller = 0
+    else:
+        teller += 1
+    if teller == len(namen):
+        break
+for x in range(len(namen)):
+    print(f"{namen[x]} : {namen2[x]}")
