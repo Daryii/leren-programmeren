@@ -12,3 +12,4 @@ if platform == 'console':
 else:
 
     print (f'U bent {platform}gamer , dan kost de game: {prijs} euro')
+print(prijs)
