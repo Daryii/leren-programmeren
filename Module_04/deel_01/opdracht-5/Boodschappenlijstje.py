@@ -8,7 +8,7 @@ while True:
         zak[product] += 1
     else:
         zak.update({product : getal})
-    voeg_product = input("wil je nog een product toe: ")
+    voeg_product = input("wil je nog een product toevoegen? :")
     if voeg_product == "ja":
         continue
     else:

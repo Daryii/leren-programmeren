@@ -7,4 +7,4 @@ def fibonacci(aantal : int) -> float:
     return gulden_snede
     
 
-print(fibonacci(230))
+print(fibonacci(285))
