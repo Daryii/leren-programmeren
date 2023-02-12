@@ -1,7 +1,7 @@
-def fibonacci(x):
-    if x <= 1:
-        return x
-    else:
-        return fibonacci(x-1) + fibonacci(x-2)
+def fibonacci(max: int):
+    lijst = [0, 1]
+    while len(lijst) < max:
+        lijst.append(lijst[-1] + lijst[-2])
+    return lijst
 
-print(fibonacci(5))
+print(fibonacci(9))

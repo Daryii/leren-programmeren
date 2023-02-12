@@ -1,9 +1,17 @@
-keuzen = ('a','b','c','d','e','f','g','h')
+mijn_zin = "apple is het beste merk \n windows 2"
 
-def getal_maal_dire(getal: int, max: int) -> int:
-    if getal >= max:
-        return getal
-    else:
-       return getal_maal_dire(3,1000)
+print(mijn_zin)    
 
-print(getal_maal_dire)
+
+
+def multiplier():
+    lijst = []
+    getal = float(input ("vul een getal in: "))
+    for i in range (1,11):
+        sum = i * getal
+        lijst.append(f" {i} * {getal} = {sum}")
+    return lijst
+
+for e in multiplier():
+    print(e)
+   

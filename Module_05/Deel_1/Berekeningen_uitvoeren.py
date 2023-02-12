@@ -75,15 +75,15 @@ while True:
 
     uitkomst1 = uitkomst
     while True : 
-        keuzen2 = input(f"Wil je wat met de uitkomst ({uitkomst1}) doen? a) iets optellen, b) iets aftrekken, c) met iets vermenigvuldigen, d) ergens door delen, e) ophogen, f) verlagen, g) verdubbelen, h) halveren of i) niets? ").lower()
+        keuzen_uitkomst = input(f"Wil je wat met de uitkomst ({uitkomst1}) doen? a) iets optellen, b) iets aftrekken, c) met iets vermenigvuldigen, d) ergens door delen, e) ophogen, f) verlagen, g) verdubbelen, h) halveren of i) niets? ").lower()
 
-        if keuzen2 == "a":
+        if keuzen_uitkomst == "a":
             n2a = float(input(f"Welke getal optellen bij {uitkomst1}? :"))
             uitkomst1 = uitkomst + n2a
             print(f"{uitkomst1}")
             print("______________________________________")
 
-        elif keuzen2 == "b":
+        elif keuzen_uitkomst == "b":
             n2a = float(input(f"Welke getal aftrekken van {uitkomst1}?:  "))
             if n2a > uitkomst1:
                 print("Dat is geen geldig getal! ")
@@ -93,13 +93,13 @@ while True:
                 print("______________________________________")
 
     
-        elif keuzen2 == "c":
+        elif keuzen_uitkomst == "c":
             n2a = float(input(f"Welke getal vermenigvuldigen met {uitkomst1}?:  "))
             uitkomst1 = uitkomst * n2a
             print(f"{uitkomst1}")
             print("______________________________________")
 
-        elif keuzen2 == "d":
+        elif keuzen_uitkomst == "d":
             n2b = float(input(f"Welke getal delen met {uitkomst1}?:  "))
             if n2b == 0:
                 print("kan niet door 0 delen")
@@ -108,26 +108,26 @@ while True:
                 print(f"{uitkomst1}")
             print("______________________________________")
 
-        elif keuzen2 == "e":
+        elif keuzen_uitkomst == "e":
             print("getal ophogen: ")
             uitkomst1 = uitkomst + 1
             print(f"{uitkomst1}")
             print("______________________________________")
 
-        elif keuzen2 == "f":
+        elif keuzen_uitkomst == "f":
             print("getal verlagen: ")
             uitkomst1 = uitkomst - 1
             print(f"{uitkomst1}")
             print("______________________________________")
 
-        elif keuzen2 == "g":
+        elif keuzen_uitkomst == "g":
             print("getal verdubbelen: ")
             uitkomst1 = uitkomst * 2
             print(f"{uitkomst1}")
             print("______________________________________")
 
 
-        elif keuzen2 == "h":
+        elif keuzen_uitkomst == "h":
             print("getal halveren: ")
             uitkomst1 = uitkomst / 2
             print(f"{uitkomst1}")
@@ -136,5 +136,5 @@ while True:
 
             
 
-        elif keuzen2 == "i":
+        elif keuzen_uitkomst == "i":
             exit()
