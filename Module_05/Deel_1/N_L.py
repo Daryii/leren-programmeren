@@ -1,19 +1,21 @@
 
-def namen_leeftijden():
-    lijst = []
 
-    while True:
-        vraag1 = input("Voer hier je naam in: ")
-        if vraag1 == "stop":
-            break
-        vraag2 = input("Voer hier je leeftijd in: ")
-        if not vraag2.isdigit():
-            print("Leeftijd moet een nummer zijn.")
-            continue
-        lijst.append({"name":vraag1, "age":int(vraag2)})
-    
+def namen_leeftijd():
+    naam = input("voer je naam in: ")
+    leeftijd = int(input("voer je leeftijd in: "))
+    return {"naam":naam,"leeftijd" : leeftijd}
 
-    for i in lijst:
-        print(f"{i['name']} is {i['age']} jaar oud")
-        
-namen_leeftijden()
+mijn_lijst = []
+
+while True:
+    x = namen_leeftijd()
+    mijn_lijst.append(x)
+
+    vraag_3 = input("voer stop als uw wilt stoppen: ")
+    if vraag_3 == "stop":
+        break
+
+for i in mijn_lijst:
+    print(f"{i['naam']} is {i['leeftijd']} jaar")
+
+
