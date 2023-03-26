@@ -106,18 +106,33 @@ def getItemsValueInGold(items: list) -> float:
 ##################### M04.D02.O8 #####################
 
 def getCashInGoldFromPeople(people:list) -> float:
-    pass
+    cash_in_gold = []
+    for i in people:
+        cash_in_gold.append(platinum2gold(i['cash']['platinum']))
+        cash_in_gold.append(silver2gold(i['cash']['silver']))
+        cash_in_gold.append((i['cash']['gold']))
+        cash_in_gold.append(copper2gold(i['cash']['copper']))
+    return float(sum(cash_in_gold))
+    
 
 ##################### M04.D02.O9 #####################
 
 def getInterestingInvestors(investors:list) -> list:
-    pass
+    return [i for i in investors if i["profitReturn"] >= 10]
 
 def getAdventuringInvestors(investors:list) -> list:
-    pass
+    return [i for i in investors if i["adventuring",True] and i["profitReturn"] >= 10]
+def getTotalInvestorsCosts(investors, gear):
+    total_cost = 0.0
+    for investor in investors:
+        cash_value = sum(investor.get('cash', {}).values())
+        total_cost += cash_value
 
-def getTotalInvestorsCosts(investors:list, gear:list) -> float:
-    pass
+    # Calculate the total cost of all the gear items
+    gear_cost = sum(item['amount'] * item['price']['amount'] for item in gear)
+    total_cost += gear_cost
+
+    return total_cost
 
 ##################### M04.D02.O10 #####################
 
