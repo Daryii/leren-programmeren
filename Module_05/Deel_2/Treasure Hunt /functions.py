@@ -59,7 +59,12 @@ def getShareWithFriends(friends:list) -> int:
     return getFromListByKeyIs(friends,"shareWith",True)
 
 def getAdventuringFriends(friends:list) -> list:
-    return getFromListByKeyIs(friends, 'adventuring', True)
+    new_list = []
+    for dict in getAdventuringPeople(friends):
+        if dict in getShareWithFriends(friends):
+            new_list.append(dict)
+    return new_list
+
 
 ##################### M04.D02.O6 #####################
 
@@ -132,6 +137,7 @@ def getTotalInvestorsCosts(investors:list, gear:list) -> float:
 
     totaal += getJourneyFoodCostsInGold(len(AdventuringInvestors),len(AdventuringInvestors))
     totaal += getTotalRentalCost(len(AdventuringInvestors), len(AdventuringInvestors))
+
     return totaal
 
 ##################### M04.D02.O10 #####################
@@ -170,7 +176,40 @@ def getAdventurerCut(profitGold:float, investorsCuts:list, fellowship:list) -> f
 ##################### M04.D02.O13 #####################
 
 def getEarnigs(profitGold:float, mainCharacter:dict, friends:list, investors:list) -> list:
-    pass
+    people = [mainCharacter] + friends + investors
+    earnings = []
+    dontaties = 10
+
+
+    # haal de juiste inhoud op
+    adventuringFriends = [friends]
+    interestingInvestors = [getInterestingInvestors(investors)]
+    adventuringInvestors = [getAdventuringInvestors(investors)]
+    investorsCuts = [getInvestorsCuts(profitGold,investors)]
+    goldCut = getAdventurerCut(profitGold,investorsCuts,len(people))
+
+    # verdeel de uitkomsten
+    for person in people:
+        if "cash" in person:
+            cash_dict = person["cash"]
+        start = getPersonCashInGold(cash_dict)
+
+
+    start_bereking = 
+        
+
+
+            
+        
+        #code aanvullen
+
+        earnings.append({
+            'name'   : 'name',
+            'start'  : 0.0,
+            'end'    : 0.0
+        })
+
+    return earnings
 
 ##################### view functions #####################
 def print_colorvars(txt:str='{}', vars:list=[], color:str='yellow') -> None:
