@@ -178,35 +178,43 @@ def getAdventurerCut(profitGold:float, investorsCuts:list, fellowship:list) -> f
 def getEarnigs(profitGold:float, mainCharacter:dict, friends:list, investors:list) -> list:
     people = [mainCharacter] + friends + investors
     earnings = []
-    dontaties = 10
-
 
     # haal de juiste inhoud op
-    adventuringFriends = [friends]
+    adventuringFriends = [getAdventuringFriends(friends)]
     interestingInvestors = [getInterestingInvestors(investors)]
     adventuringInvestors = [getAdventuringInvestors(investors)]
     investorsCuts = [getInvestorsCuts(profitGold,investors)]
-    goldCut = getAdventurerCut(profitGold,investorsCuts,len(people))
+    goldCut = 0.0
 
     # verdeel de uitkomsten
     for person in people:
         if "cash" in person:
-            cash_dict = person["cash"]
-        start = getPersonCashInGold(cash_dict)
+            if person == mainCharacter:
+                name = mainCharacter['name']   
+                earnings.append(name)
+                start = getPersonCashInGold(mainCharacter)
+                end = getPersonCashInGold((mainCharacter + profitGold ) - (interestingInvestors[profitGold] + adventuringInvestors[profitGold]))
+            elif person == adventuringFriends:
+                name = adventuringFriends['name']   
+                earnings.append(name)
+                start = getPersonCashInGold(friends)
+                end = getPersonCashInGold((friends+profitGold)-(interestingInvestors[profitGold] + adventuringInvestors[profitGold]))
+            elif person == interestingInvestors:
+                name = interestingInvestors['name']   
+                earnings.append(name)
+                start = getPersonCashInGold(investors)
+                end = getPersonCashInGold((investors + profitGold) - (adventuringInvestors[profitGold]))
 
-
-    start_bereking = 
-        
-
-
+            else:
+                start = getPersonCashInGold(investorsCuts)
+                end = getPersonCashInGold(round(investors['profitReturn'] / 100 * profitGold,2) )
             
-        
-        #code aanvullen
+                     #code aanvullen
 
         earnings.append({
-            'name'   : 'name',
-            'start'  : 0.0,
-            'end'    : 0.0
+            'name'   :name,
+            'start'  : start,
+            'end'    :end
         })
 
     return earnings
