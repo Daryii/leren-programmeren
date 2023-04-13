@@ -29,10 +29,10 @@ def platinum2gold(amount:int) -> float:
     return float(platinum)
 
 def getPersonCashInGold(personCash:dict) -> float:
-    platinum = personCash["platinum"] * 25
-    copper = personCash["copper"] / 50
-    silver = personCash["silver"] / 5
-    goud = personCash["gold"] 
+    platinum = personCash ["platinum"] * 25
+    copper = personCash ["copper"] / 50
+    silver = personCash ["silver"] / 5
+    goud = personCash ["gold"] 
     totaal = platinum + copper + silver + goud
     return totaal
 ##################### M04.D02.O4 #####################
@@ -178,46 +178,57 @@ def getAdventurerCut(profitGold:float, investorsCuts:list, fellowship:list) -> f
 def getEarnigs(profitGold:float, mainCharacter:dict, friends:list, investors:list) -> list:
     people = [mainCharacter] + friends + investors
     earnings = []
+    donation =10
 
     # haal de juiste inhoud op
-    adventuringFriends = [getAdventuringFriends(friends)]
-    interestingInvestors = [getInterestingInvestors(investors)]
-    adventuringInvestors = [getAdventuringInvestors(investors)]
-    investorsCuts = [getInvestorsCuts(profitGold,investors)]
-    goldCut = 0.0
+    adventuringFriends = getAdventuringFriends(friends)
+    interestingInvestors = getInterestingInvestors(investors)
+    adventuringInvestors = getAdventuringInvestors(investors)
+    investorsCuts = getInvestorsCuts(profitGold,investors)
+    goldCut =  getAdventurerCut(profitGold, investorsCuts, len(people))
+
 
     # verdeel de uitkomsten
     for person in people:
-        if "cash" in person:
-            if person == mainCharacter:
-                name = mainCharacter['name']   
-                earnings.append(name)
-                start = getPersonCashInGold(mainCharacter)
-                end = getPersonCashInGold((mainCharacter + profitGold ) - (interestingInvestors[profitGold] + adventuringInvestors[profitGold]))
-            elif person == adventuringFriends:
-                name = adventuringFriends['name']   
-                earnings.append(name)
-                start = getPersonCashInGold(friends)
-                end = getPersonCashInGold((friends+profitGold)-(interestingInvestors[profitGold] + adventuringInvestors[profitGold]))
-            elif person == interestingInvestors:
-                name = interestingInvestors['name']   
-                earnings.append(name)
-                start = getPersonCashInGold(investors)
-                end = getPersonCashInGold((investors + profitGold) - (adventuringInvestors[profitGold]))
+        if 'cash' in person:
+            cash_dict = person['cash']
+        start = getPersonCashInGold(cash_dict)
+        
+        
+        if person == mainCharacter:
 
-            else:
-                start = getPersonCashInGold(investorsCuts)
-                end = getPersonCashInGold(round(investors['profitReturn'] / 100 * profitGold,2) )
-            
-                     #code aanvullen
+            end = round((start+goldCut)+(donation*len(adventuringFriends)),2)
+
+        elif person in adventuringFriends:
+
+            end = round((start+goldCut)-donation,2)
+        else:
+            end = start
+        
+        
+
+        if "profitReturn" in person:
+            if person in interestingInvestors:
+                if person in adventuringInvestors:
+
+                    end = round((profitGold/100)*person["profitReturn"]+start+goldCut,2)
+
+                else:
+
+                    end = round((profitGold/100)*person["profitReturn"]+start,2)
+        
+        
 
         earnings.append({
-            'name'   :name,
+            'name'   : person['name'],
             'start'  : start,
-            'end'    :end
+            'end'    : end
         })
-
+        
+                                                                                                                                                                                                
     return earnings
+
+
 
 ##################### view functions #####################
 def print_colorvars(txt:str='{}', vars:list=[], color:str='yellow') -> None:

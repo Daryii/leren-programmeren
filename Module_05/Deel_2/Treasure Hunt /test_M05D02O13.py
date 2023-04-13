@@ -52,7 +52,6 @@ result3 = [
     {'name': 'TestChar2', 'start': 30.0, 'end': 77.5}, 
     {'name': 'TestInvestor1', 'start': 125.0, 'end': 177.5}
 ]
-
 if getEarnigs(100, testMainCharacter2, [], inverstorsTestList1) != result3:
     print_colorvars(vars=['Test 3 is False'], color='red')
 else:
