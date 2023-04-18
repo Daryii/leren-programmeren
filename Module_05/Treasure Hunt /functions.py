@@ -127,7 +127,7 @@ def getInterestingInvestors(investors:list) -> list:
     return [i for i in investors if i["profitReturn"] <= 10]
 
 def getAdventuringInvestors(investors:list) -> list:
-    return [i for i in investors if getInterestingInvestors(investors) and i["adventuring"]]
+    return [i for i in investors if i["adventuring"] and i["profitReturn"] <= 10]
 
 def getTotalInvestorsCosts(investors:list, gear:list) -> float:
     totaal = 0

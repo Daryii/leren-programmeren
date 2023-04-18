@@ -54,8 +54,7 @@ result3 = [
 ]
 if getEarnigs(100, testMainCharacter2, [], inverstorsTestList1) != result3:
     print_colorvars(vars=['Test 3 is False'], color='red')
-    print(getEarnigs(100, testMainCharacter2, [], inverstorsTestList1))
-    print(result3)
+    
 else:
     print_colorvars(vars=['Test 3 is correct'], color='green')
 
@@ -134,8 +133,6 @@ result6 = [
 ]
 result = getEarnigs(500, testMainCharacter1, friendsTestList2, inverstorsTestList1)
 if result!= result6:
-    print(result6)
-    print(result)
     print_colorvars(vars=['Test 6 is False'], color='red')
 else:
     print_colorvars(vars=['Test 6 is correct'], color='green')
