@@ -30,6 +30,6 @@ calculateButton.place(x=20, y=520)
 characterLabel.place(x=180, y=560)
 sentencesLabel.place(x=20, y=560)
 woordenlabel.place(x=340 , y=560)
-AVI_Score.place(x = 490 , y=560)
+AVI_Score.place(x = 500 , y=560)
 # start program
 root.mainloop() # runs until stopped with default stop button.

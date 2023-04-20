@@ -19,7 +19,11 @@ else:
     print("Deze test is niet geslaagd")
 
 # schrijf zelf nog een extra testen voor getNumberOfSentences (gebruik test.txt).
-
+ 
+if getNumberOfSentences(getText('test_1')) == 15:
+    print("Test geslaagd")
+else:
+    print("Deze test is niet geslaagd") 
 
 # test 3: getNumberOfWords
 
@@ -35,3 +39,13 @@ else:
     print("Deze test is niet geslaagd")
 
 # schrijf zelf nog een extra testen voor getNumberOfWords (gebruik test.txt).
+
+if getNumberOfWords(getText('difficult_1')) == 289:
+    print("Test geslaagd")
+else:
+    print("Deze test is niet geslaagd")
+
+if getNumberOfWords(getText('easy_1')) == 131:
+    print("Test geslaagd")
+else:
+    print("Deze test is niet geslaagd")
