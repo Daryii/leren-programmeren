@@ -1,0 +1,25 @@
+In het begin van de programma van Papi Gelato ga je een Welkom tekst krijgen
+/stap 1
+En dan ga je gevraagd worden voor hoeveel bolletjes je wilt hebben
+Op basic van jouw antwoord ga je verschillde route!
+
+Als jouw gegeven aantal is groter of gelijk aan 4 en kleiner of gelijk aan 8 dan ga je deze tekst te zien krijgen "Hier is uw {hoorntje/bakje}met {aantal}bolletje(s)"
+
+Als jouw gegeven aantal is groter dan 8 ga je deze tekst te zien krijgen "Sorry, zulke grotebakken hebben we niet" en je wordt naar stap 1 terug gestuurd!
+waar je weer gevraagd wordt wat je wilt bestellen.
+
+Als jouw gegeven aantal is klein of gelijk aan 3 en groter dan 0 
+ga je een specific vraag gestelde worden 
+/stap 2
+de vraag is als volg " wilt u deze  bolletjes in een hoorntje of een bakje?"
+als de antwoord op deze vraag een van de keuzen is dan ga je deze tekst krijgen te zien "Hier is uw {bakje of hoorntje} met {aantal_bolletjes} bolletjes" 
+/stap 3
+En dan ga je gevraagd worden als nog een bestelling wilt plaatsen
+als je deze vraag met ja beantwoord ga je terug naar stap 1
+waar je weer gevraagd wordt wat je wilt bestellen.
+
+als je de vraag beantwoord met nee ga je deze tekst krijgen te zien "U heeft in totaal {totaal} bolletjes besteld. Bedankt en tot ziens!"
+anders ga je deze tekst te zien krijgen = "Sorry,dat snap ik niet..."
+
+
+
