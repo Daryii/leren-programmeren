@@ -1,46 +1,42 @@
-
-#om het aantal bolletjes op te vragen
-def get_aantal_bolletjes(vraag :str)-> int:
-
-    aantal = int(input(vraag))
-    a = True
-    while a == True:
-        if aantal != int:
-            a = False
-        else:
-            print("voer een getal in!")
-            a = True
+def get_aantal_bolletjes(vraag)-> int:
+    aantal = None
+    c = True
+    while c:
+        try:
+            aantal = int(input(vraag))
+            c = False
+        except ValueError:
+            print('Voer een getal in!')
     return aantal
+
 
 
 def get_hoorntje_of_bakje(aantal_bolletjes):
     c = True
-    while c == True:
+    while c:
         vraag = input(f"Wilt u deze {aantal_bolletjes} bolletjes in een hoorntje of een bakje?: ")
-        if vraag == "bakje" or vraag == "hoorntje":
+        if vraag == "hoorntje" or vraag == 'bakje':
             c = False
         else:
             print("Sorry,dat snap ik niet...")
-        return aantal_bolletjes
-    
-#maakt een ijsje een geeft het terug
-def get_ijs() -> list:
-    
-    ijs_dict = {}
-    vraag = ""
+    return vraag
     
 
-    aantal_bolletjes  = get_aantal_bolletjes("Hoeveel bolletjes wilt u? : ")
+
+def get_ijs() -> list:
+    ijs_dict = {}
+    vraag = ''
+    
+    aantal_bolletjes  = get_aantal_bolletjes('Hoeveel bolletje wilt uw hebben? :')
 
     if aantal_bolletjes <= 3 and aantal_bolletjes > 0:
+        vraag = get_hoorntje_of_bakje(aantal_bolletjes)
         
-            
     elif aantal_bolletjes >= 4 and aantal_bolletjes <= 8:
         print(f'Dan krijgt u van mij een bakje met {aantal_bolletjes} bolletjes')
-   
     elif aantal_bolletjes > 8:
         print("Sorry, zulke grote bakken hebben we niet")
-        
+        return
     else:
         print("Sorry,dat snap ik niet...")
        
@@ -58,15 +54,18 @@ orders.append(get_ijs())
 
 
 d = True
-while d == True:
+while d:
     bestelling_vraag = input("Wilt u nog meer bestellen?: ")
+
     if bestelling_vraag == "ja":
         orders.append(get_ijs())
-        print(orders)
     elif bestelling_vraag == "nee":
         print("Hier zijn uw bestellingen:")
         for i in orders:
-            print(f"{i['bolletjes']} bolletjes in een {i['keuzen']}")
+            if i['keuzen'] == 'bakje' or i['keuzen'] == '':
+                print(f"{i['bolletjes']} bolletjes in een bakje")
+            else:
+                print(f"{i['bolletjes']} bolletjes in een {i['keuzen']}")
         d = False
     else:
         print("Sorry,dat snap ik niet...")
