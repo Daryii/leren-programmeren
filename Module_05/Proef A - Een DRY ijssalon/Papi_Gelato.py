@@ -7,42 +7,34 @@ def get_aantal_bolletjes(vraag)-> int:
             c = False
         except ValueError:
             print('Voer een getal in!')
+        if aantal > 8:
+            print("Sorry, zulke grote bakken hebben we niet")
     return aantal
 
 
 
 def get_hoorntje_of_bakje(aantal_bolletjes):
-    c = True
-    while c:
-        vraag = input(f"Wilt u deze {aantal_bolletjes} bolletjes in een hoorntje of een bakje?: ")
-        if vraag == "hoorntje" or vraag == 'bakje':
-            c = False
-        else:
-            print("Sorry,dat snap ik niet...")
+    vraag = 'bakje'
+    if aantal_bolletjes <= 3 and aantal_bolletjes > 0:
+        c = True
+        while c:
+            vraag = input(f"Wilt u deze {aantal_bolletjes} bolletjes in een hoorntje of een bakje?: ")
+            if vraag == "hoorntje" or vraag == 'bakje':
+                c = False
+            else:
+                print("Sorry,dat snap ik niet...") 
+
+    else:
+        print(f'Dan krijgt u van mij een bakje met {aantal_bolletjes} bolletjes')
     return vraag
     
-
-
 def get_ijs() -> list:
     ijs_dict = {}
-    vraag = ''
-    
+
     aantal_bolletjes  = get_aantal_bolletjes('Hoeveel bolletje wilt uw hebben? :')
 
-    if aantal_bolletjes <= 3 and aantal_bolletjes > 0:
-        vraag = get_hoorntje_of_bakje(aantal_bolletjes)
-        
-    elif aantal_bolletjes >= 4 and aantal_bolletjes <= 8:
-        print(f'Dan krijgt u van mij een bakje met {aantal_bolletjes} bolletjes')
-    elif aantal_bolletjes > 8:
-        print("Sorry, zulke grote bakken hebben we niet")
-        return
-    else:
-        print("Sorry,dat snap ik niet...")
-       
-
     ijs_dict["bolletjes"] = aantal_bolletjes
-    ijs_dict["keuzen"] = vraag
+    ijs_dict["keuzen"] = get_hoorntje_of_bakje(aantal_bolletjes)
     return ijs_dict     
 
     
@@ -61,11 +53,9 @@ while d:
         orders.append(get_ijs())
     elif bestelling_vraag == "nee":
         print("Hier zijn uw bestellingen:")
+        print(orders)
         for i in orders:
-            if i['keuzen'] == 'bakje' or i['keuzen'] == '':
-                print(f"{i['bolletjes']} bolletjes in een bakje")
-            else:
-                print(f"{i['bolletjes']} bolletjes in een {i['keuzen']}")
+            print(f"{i['bolletjes']} bolletjes in een {i['keuzen']}")
         d = False
     else:
         print("Sorry,dat snap ik niet...")
