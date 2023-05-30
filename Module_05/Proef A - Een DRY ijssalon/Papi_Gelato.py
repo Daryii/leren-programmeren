@@ -55,26 +55,36 @@ def bon():
         elif i['keuzen'] == 'bakje':
             bakjes += 1
 
-        Bereking_bolletjes = round(i['bolletjes'] * Bestelling['Bolletjes'],2)
+        Bereking_bolletjes = round(aantal_bolletjes * Bestelling['Bolletjes'],2)
         Bereking_keuzen_b = round(bakjes * Bestelling['Bakje'],2)
         Bereking_keuzen_h = round(hoorntjes * Bestelling['Hoorntje'],2)
+        
         Totaal += Bereking_bolletjes + Bereking_keuzen_h + Bereking_keuzen_b
 
         print('------["Papi Gelato"]--------\n')
 
         if aantal_bolletjes > 0:
-            print("Bolletjes   "+ str(i['bolletjes']) +' * €'+ str(Bestelling['Bolletjes'])+' = €'+ str(Bereking_bolletjes))
+            for smaak,waarde in i['smaak'].items():
+                smaak_bereking = round(waarde * Bestelling['Bolletjes'],2)
+                if smaak == 'Aardbei':
+                    print("B.Aardbei        "+ str(waarde) +' * €'+ str(Bestelling['Bolletjes'])+' = €'+ str(smaak_bereking)) 
+                elif smaak == 'Chocolade':
+                    print("B.Chocolade      "+ str(waarde) +' * €'+ str(Bestelling['Bolletjes'])+' = €'+ str(smaak_bereking)) 
+                elif smaak == 'Munt':
+                    print("B.Munt           "+ str(waarde) +' * €'+ str(Bestelling['Bolletjes'])+' = €'+ str(smaak_bereking)) 
+                elif smaak == 'Vanille':
+                    print("B.Vanille        "+ str(waarde) +' * €'+ str(Bestelling['Bolletjes'])+' = €'+ str(smaak_bereking)) 
         if hoorntjes > 0:
-            print("Hoorntjes   "+ str(hoorntjes) +' * €' + str(Bestelling['Hoorntje'])+' = €'+ str(Bereking_keuzen_h))
+            print("Hoorntjes        "+ str(hoorntjes) +' * €' + str(Bestelling['Hoorntje'])+' = €'+ str(Bereking_keuzen_h))
         if bakjes > 0:
-            print("Bakjes      "+ str(bakjes) +' * €'+ str(Bestelling['Bakje'])+' = €'+ str(Bereking_keuzen_b))
+            print("Bakjes           "+ str(bakjes) +' * €'+ str(Bestelling['Bakje'])+' = €'+ str(Bereking_keuzen_b))
 
-        print('                  --------- +')
-        print('Totaal               ' + '= £'+ str(Totaal)+'\n')
+        print('                        --------- +')
+        print('Totaal                     ' + '= £'+ str(Totaal)+'\n')
 
-        print('Bedankt en tot ziens!')
+        print('Bedankt en tot ziens!\n')
                 
-def get_smaak(aantal_bollejes):
+def get_smaak(aantal_bollejes)-> list:
     smaken_dict = {}
 
     Aardbei = 0
@@ -83,22 +93,29 @@ def get_smaak(aantal_bollejes):
     Vanille = 0
 
     for i in range(aantal_bollejes):
-        vraag = input(f'Welke smaak wilt u voor bolletje nummer {i+1}? A) Aardbei, C) Chocolade, M) Munt of V) Vanille?').lower()
-        if vraag == 'a':
-            Aardbei += 1
-            smaken_dict['B.Aardbei'] = Aardbei
-        elif vraag == 'c':
-            Chocolade += 1
-            smaken_dict['B.Chocolade'] = Chocolade
-        elif vraag == 'm':
-            Munt += 1
-            smaken_dict['B.Munt'] = Munt
-        elif vraag == 'v':
-            Vanille += 1
-            smaken_dict['B.Vanille'] = Vanille
-        else:
-            print("Sorry dat snap ik niet....")
-            i -= 1
+        c = True
+        while c:
+            vraag = input(f'Welke smaak wilt u voor bolletje nummer {i+1}? A) Aardbei, C) Chocolade, M) Munt of V) Vanille?').lower()
+            if vraag in ['a','c','m','v']:
+                c = False
+                if vraag == 'a':
+                    Aardbei += 1
+                    smaken_dict['Aardbei'] = Aardbei
+                elif vraag == 'c':
+                    Chocolade += 1
+                    smaken_dict['Chocolade'] = Chocolade
+                elif vraag == 'm':
+                    Munt += 1
+                    smaken_dict['Munt'] = Munt
+                elif vraag == 'v':
+                    Vanille += 1
+                    smaken_dict['Vanille'] = Vanille
+                else:
+                    print("Sorry dat snap ik niet....")
+                    i -= 1
+            else:
+                c = True
+
     return smaken_dict
 
 print()
@@ -113,9 +130,9 @@ while d:
     if bestelling_vraag == "ja":
         orders.append(get_ijs())
     elif bestelling_vraag == "nee":
+        print(orders)
         print("Hier zijn uw bestellingen:\n")
         bon()
         d = False
     else:
         print("Sorry,dat snap ik niet...\n")
-
