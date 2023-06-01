@@ -119,7 +119,7 @@ def get_smaak(aantal_bollejes)-> list:
     return smaken_dict
 
 print()
-print("Welkom bij Papi Gelato je mag alle smaken kiezen zolang het maar vanille ijs is\n")
+print("Welkom bij Papi Gelato\n")
 orders.append(get_ijs())
 
 
