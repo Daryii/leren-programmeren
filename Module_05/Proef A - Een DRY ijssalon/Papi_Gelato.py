@@ -1,5 +1,5 @@
 orders = []
-Prijzen = {'Bolletjes':1.10 ,'Hoorntje':1.25,'Bakje':0.75 ,'Slagroom': 0.50 ,'Sprinkels':0.30 , "Caramel Saus":0.0}
+prijzen = {'Bolletjes':1.10 ,'Hoorntje':1.25,'Bakje':0.75 ,'Slagroom': 0.50 ,'Sprinkels':0.30 , "Caramel_Saus":0.90}
 
 
 def get_aantal_bolletjes(vraag)-> int:
@@ -68,48 +68,50 @@ def bon():
                 aantal_bolletjes_smaak.update({k:v})
                 
         Toppings_v = i['Toppings']
-        # print(Toppings_v)
-
-        # print(Topping_dict)
-
         for key,value in Toppings_v.items():
             if key in Topping_dict:
                 Topping_dict[key] += value
             else:
                 Topping_dict.update({key:value})
-    print(Toppings_v)
-    print(Topping_dict)
+    
 
 
 
-    Bereking_bolletjes = round(aantal_bolletjes * Prijzen['Bolletjes'],2)
-    Bereking_keuzen_b = round(bakjes * Prijzen['Bakje'],2)
-    Bereking_keuzen_h = round(hoorntjes * Prijzen['Hoorntje'],2)
-
+    Bereking_bolletjes = round(aantal_bolletjes * prijzen['Bolletjes'],2)
+    Bereking_keuzen_b = round(bakjes * prijzen['Bakje'],2)
+    Bereking_keuzen_h = round(hoorntjes * prijzen['Hoorntje'],2)
+    
     
     Totaal_bedrag += Bereking_bolletjes + Bereking_keuzen_h + Bereking_keuzen_b 
 
 
 
-    # # # Totaal printen
-    # print(Totaal_bedrag)
-    # print('------["Papi Gelato"]--------\n')
+    # # Totaal printen
+    print(Totaal_bedrag)
+    print('------["Papi Gelato"]--------\n')
     
-    # if aantal_bolletjes > 0:
-    #     for smaak,waarde in aantal_bolletjes_smaak.items():
-    #         print(f"{smaak}        "+ str(waarde) +' * €'+ str(Prijzen['Bolletjes'])+' = €'+ str(waarde * Prijzen['Bolletjes'] )) 
+    if aantal_bolletjes > 0:
+        for smaak,waarde in aantal_bolletjes_smaak.items():
+            print(f"{smaak}        "+ str(waarde) +' * €'+ str(prijzen['Bolletjes'])+' = €'+ str(waarde * prijzen['Bolletjes'] )) 
 
-    # if hoorntjes > 0:
-    #     print("Hoorntjes        "+ str(hoorntjes) +' * €' + str(Prijzen['Hoorntje'])+' = €'+ str(Bereking_keuzen_h))
-    # if bakjes > 0:
-    #     print("Bakjes           "+ str(bakjes) +' * €'+ str(Prijzen['Bakje'])+' = €'+ str(Bereking_keuzen_b))
-    # if Topping_dict != '':
-    #     print("Topping              "+' = €'+ str(Topping_dict.values()))
+    if hoorntjes > 0:
+        print("Hoorntjes        "+ str(hoorntjes) +' * €' + str(prijzen['Hoorntje'])+' = €'+ str(Bereking_keuzen_h))
+    if bakjes > 0:
+        print("Bakjes           "+ str(bakjes) +' * €'+ str(prijzen['Bakje'])+' = €'+ str(Bereking_keuzen_b))
+    if Topping_dict != '':
+        for k,v in Topping_dict.items():
+            topping_bereking = (prijzen[k] * v)
+            if k == 'Caramel_Saus' and hoorntjes > 0:
+                print(f"T.{k}         " + '    = € '+ str(round(topping_bereking - 0.30,2) ))
+            else:
+                print(f"T.{k}              " + '    = € '+ str(topping_bereking))
 
-    # print('                        --------- +')
-    # print('Totaal                ' + '= £'+ str(Totaal_bedrag)+'\n')
+                
 
-    # print('Bedankt en tot ziens!\n')
+    print('                        --------- +')
+    print('Totaal                ' + '= £'+ str(Totaal_bedrag + topping_bereking )+'\n')
+
+    print('Bedankt en tot ziens!\n')
     
 def get_smaak(aantal_bollejes)-> list:
     smaken_dict = {}
@@ -184,12 +186,12 @@ orders.append(get_ijs())
 
 d = True
 while d:
-    Prijzen_vraag = input("Wilt u nog meer bestellen? (ja/nee) :")
+    prijzen_vraag = input("Wilt u nog meer bestellen? (ja/nee) :")
 
-    if Prijzen_vraag == "ja":
+    if prijzen_vraag == "ja":
         orders.append(get_ijs())
-    elif Prijzen_vraag == "nee":
-        print("Hier zijn uw Prijzenen:\n")
+    elif prijzen_vraag == "nee":
+        print("Hier zijn uw Bestelling:\n")
         bon()
         d = False
     else:
