@@ -97,19 +97,20 @@ def bon():
     if hoorntjes > 0:
         print("Hoorntjes        "+ str(hoorntjes) +' * €' + str(prijzen['Hoorntje'])+' = €'+ str(Bereking_keuzen_h))
     if bakjes > 0:
-        print("Bakjes           "+ str(bakjes) +' * €'+ str(prijzen['Bakje'])+' = €'+ str(Bereking_keuzen_b))
-    if Topping_dict != '':
+        print(f"Bakjes           {bakjes} * €{prijzen['Bakje']} = € {Bereking_keuzen_b}")
+    topping_b = 0 
+    if Topping_dict != {}:
         for k,v in Topping_dict.items():
-            topping_bereking = (prijzen[k] * v)
+            topping_b = (prijzen[k] * v)
             if k == 'Caramel_Saus' and hoorntjes > 0:
-                print(f"T.{k}         " + '    = € '+ str(round(topping_bereking - 0.30,2) ))
+                print(f"T.{k}           = € {round(topping_b - 0.30,2)}")
             else:
-                print(f"T.{k}              " + '    = € '+ str(topping_bereking))
+                print(f"T.{k}              " + '    = € '+ str(topping_b))
 
-                
+
 
     print('                        --------- +')
-    print('Totaal                ' + '= £'+ str(Totaal_bedrag + topping_bereking )+'\n')
+    print('Totaal                ' + '= £'+ str(Totaal_bedrag + topping_b )+'\n')
 
     print('Bedankt en tot ziens!\n')
     
