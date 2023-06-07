@@ -58,7 +58,7 @@ def get_ijs() -> list:
     
 def bon():
 
-    Totaal_bedrag= 0
+    Totaal_bedrag = 0
     bakjes = 0
     hoorntjes = 0
     aantal_bolletjes = 0
@@ -94,9 +94,9 @@ def bon():
 
 
 
-    Bereking_bolletjes = round(aantal_bolletjes * PRIJZEN['Bolletjes'],2)
-    Bereking_keuzen_b = round(bakjes * PRIJZEN['Bakje'],2)
-    Bereking_keuzen_h = round(hoorntjes * PRIJZEN['Hoorntje'],2)
+    Bereking_bolletjes = round(aantal_bolletjes * PRIJZEN['Bolletjes'],3)
+    Bereking_keuzen_b = round(bakjes * PRIJZEN['Bakje'],3)
+    Bereking_keuzen_h = round(hoorntjes * PRIJZEN['Hoorntje'],3)
     
     
     Totaal_bedrag += Bereking_bolletjes + Bereking_keuzen_h + Bereking_keuzen_b 
@@ -104,15 +104,14 @@ def bon():
 
 
     # # Totaal printen
-    print(Totaal_bedrag)
+    
     print('------["Papi Gelato"]--------\n')
     
     if aantal_bolletjes > 0:
-        liter_b = 0
-        for smaak, waarde in smaken_dict.items():
-            liter_b = waarde * PRIJZEN['L']
+        
+        for smaak, waarde in smaken_dict.items(): 
             if not Topping_dict:
-                print(f"L.{smaak}        {waarde} * € {PRIJZEN['L']} = € {liter_b}")
+                print(f"L.{smaak}        {waarde} * € {PRIJZEN['L']} = € {waarde * PRIJZEN['L']:.2f}")
             else:
                 print(f"B.{smaak}        {waarde} * € {PRIJZEN['Bolletjes']} = € {waarde * PRIJZEN['Bolletjes']}") 
 
@@ -125,7 +124,7 @@ def bon():
         for k,v in Topping_dict.items():
             topping_b = (PRIJZEN[k] * v)
             if k == 'Caramel_Saus' and hoorntjes > 0:
-                print(f"T.{k}           = € {round(topping_b - 0.30,2)}")
+                print(f"T.{k}           = € {topping_b - 0.30:.2f}")
             else:
                 print(f"T.{k}                  = € {topping_b}")
 
@@ -133,11 +132,11 @@ def bon():
 
     print('                        --------- +')
     if not Topping_dict:
-        berekening = round(Totaal_bedrag  + liter_b - aantal_bolletjes * PRIJZEN['Bolletjes'],2)
-        print(f'Totaal_bedrag                = £ {berekening}\n')
-        print(f"BTW:                         = {round(berekening/100 * BTW),2}")
+        berekening = round(sum(PRIJZEN['L'] * w for w in smaken_dict.values()), 2)
+        print(f'Totaal_bedrag                = € {berekening:.2f}')
+        print(f"BTW:                         = € {berekening/100 * BTW:.2f}")
     else:
-        print(f'Totaal_bedrag                = £ {Totaal_bedrag + topping_b + liter_b}\n')
+        print(f'Totaal_bedrag                = € {Totaal_bedrag + topping_b:.2f}\n')
 
     print('Bedankt en tot ziens!\n')
     
@@ -161,16 +160,16 @@ def get_smaak(aantal_bollejes,klant)-> list:
             
             if smaak_v in ['a','c','m','v']:
                 c = False
-                if smaak_v or smaak_v == 'a':
+                if smaak_v == 'a':
                     Aardbei += 1
                     smaken_dict['Aardbei'] = Aardbei
-                elif smaak_v or smaak_v == 'c':
+                elif smaak_v == 'c':
                     Chocolade += 1
                     smaken_dict['Chocolade'] = Chocolade
-                elif smaak_v or smaak_v == 'm':
+                elif smaak_v == 'm':
                     Munt += 1
                     smaken_dict['Munt'] = Munt
-                elif smaak_v or smaak_v == 'v':
+                elif smaak_v == 'v':
                     Vanille += 1
                     smaken_dict['Vanille'] = Vanille
                 else:
