@@ -1,25 +1,30 @@
-In het begin van de programma van Papi Gelato ga je een Welkom tekst krijgen
-/stap 1
-En dan ga je gevraagd worden voor hoeveel bolletjes je wilt hebben
-Op basic van jouw antwoord ga je verschillde route!
+In het begin van het programma van Papi Gelato ontvang je een welkomsttekst.
+Stap 1: Je wordt gevraagd of je een zakelijke of particuliere klant bent. Op basis van je antwoord ga je door verschillende stappen.
 
-Als jouw gegeven aantal is groter of gelijk aan 4 en kleiner of gelijk aan 8 dan ga je deze tekst te zien krijgen "Hier is uw {hoorntje/bakje}met {aantal}bolletje(s)"
+Als je een particuliere klant bent, doorloop je de volgende stappen:
+1. Je wordt eerst gevraagd hoeveel bolletjes ijs je wilt hebben.
+   Afhankelijk van je antwoord ga je naar verschillende stappen.
 
-Als jouw gegeven aantal is groter dan 8 ga je deze tekst te zien krijgen "Sorry, zulke grotebakken hebben we niet" en je wordt naar stap 1 terug gestuurd!
-waar je weer gevraagd wordt wat je wilt bestellen.
+   - Als het door jou opgegeven aantal gelijk is aan of tussen de 4 en 8 ligt, krijg je de volgende tekst te zien: "Dan krijg je een {bakje} met {aantal} bolletje(s)".
 
-Als jouw gegeven aantal is klein of gelijk aan 3 en groter dan 0 
-ga je een specific vraag gestelde worden 
-/stap 2
-de vraag is als volg " wilt u deze  bolletjes in een hoorntje of een bakje?"
-als de antwoord op deze vraag een van de keuzen is dan ga je deze tekst krijgen te zien "Hier is uw {bakje of hoorntje} met {aantal_bolletjes} bolletjes" 
-/stap 3
-En dan ga je gevraagd worden als nog een bestelling wilt plaatsen
-als je deze vraag met ja beantwoord ga je terug naar stap 1
-waar je weer gevraagd wordt wat je wilt bestellen.
+   - Als het door jou opgegeven aantal groter is dan 8, krijg je de volgende tekst te zien: "Sorry, zulke grote bakken hebben we niet" en word je teruggestuurd naar stap 1, waar je opnieuw wordt gevraagd wat je wilt bestellen.
 
-als je de vraag beantwoord met nee ga je deze tekst krijgen te zien "U heeft in totaal {totaal} bolletjes besteld. Bedankt en tot ziens!"
-anders ga je deze tekst te zien krijgen = "Sorry,dat snap ik niet..."
+   - Als het door jou opgegeven aantal kleiner is dan of gelijk is aan 3 en groter dan 0, word je een specifieke vraag gesteld.
 
+2. Stap 2: Je wordt gevraagd welke smaken je wilt hebben voor elk bolletje of liter.
 
+3. Stap 3: Je wordt gevraagd welke topping je wilt hebben.
 
+4. Stap 4: De vraag luidt als volgt: "Wil je deze bolletjes in een hoorntje of een bakje?"
+   Als je antwoord een van de keuzes is, krijg je de volgende tekst te zien: "Hier is je {bakje of hoorntje} met {aantal_bolletjes} bolletjes."
+
+5. Stap 5: Je wordt gevraagd of je nog een bestelling wilt plaatsen.
+   Als je deze vraag met "ja" beantwoordt, wordt je laatste bestelling afgedrukt en ga je terug naar stap 1, waar je opnieuw wordt gevraagd wat je wilt bestellen.
+
+   Als je de vraag met "nee" beantwoordt, krijg je de volgende tekst te zien: "Wordt jouw laatste bestelling afgedrukt" en stopt het programma.
+
+   Als je de vraag anders beantwoordt, krijg je de volgende tekst te zien: "Sorry, dat begrijp ik niet..."
+
+Als je een zakelijke klant bent, doorloop je de volgende stappen:
+1. Je wordt eerst gevraagd hoeveel liter ijs je wilt bestellen.
+   Daarna ga je naar stap 3 en vervolgens naar stap 5.
