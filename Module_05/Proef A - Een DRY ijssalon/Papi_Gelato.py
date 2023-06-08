@@ -1,6 +1,6 @@
-PRIJZEN = {'Bolletjes':1.10 ,'Hoorntje':1.25,'Bakje':0.75 ,'Slagroom': 0.50 ,'Sprinkels':0.30 , "Caramel_Saus":0.90 , "L":9.80}
-BTW = 9
-
+PRIJZEN = {'Bolletjes':0.95 ,'Hoorntje':1.25,'Bakje':0.75 ,'Slagroom': 0.50 ,'Sprinkels':0.30 , "Caramel_Saus":0.90 , "L":9.80}
+BTW = 6
+S_PRINT = 'Sorry dat is geen optie die we aanbieden...\n'
 def get_aantal_bolletjes(klant)-> int:
     while True:
         try:
@@ -9,7 +9,7 @@ def get_aantal_bolletjes(klant)-> int:
             elif klant == 'particuliere_klant':
                 aantal = int(input('Hoeveel bolletjes wilt uw hebben? :'))
             if aantal > 8:
-                print("Sorry, zulke grote bakken hebben we niet\n")
+                print(S_PRINT)
             else:
                 return aantal
         except ValueError:
@@ -25,8 +25,7 @@ def get_hoorntje_of_bakje(aantal_bolletjes):
             if vraag == "hoorntje" or vraag == 'bakje':
                 c = False
             else:
-                print("Sorry,dat snap ik niet...\n") 
-
+                print(S_PRINT)
     else:
         print(f'Dan krijgt u van mij een bakje met {aantal_bolletjes} bolletjes\n')
     return vraag
@@ -131,7 +130,6 @@ def get_smaak(aantal_bollejes,klant)-> list:
 
     Aardbei = 0
     Chocolade = 0
-    Munt = 0
     Vanille = 0
 
     for i in range(aantal_bollejes):
@@ -141,10 +139,10 @@ def get_smaak(aantal_bollejes,klant)-> list:
                 soort_ijs = 'liter'
             elif klant == 'particuliere_klant':
                 soort_ijs = 'bolletje'
-            smaak_v = input(f'Welke smaak wilt u voor {soort_ijs} nummer {i+1}? A) Aardbei, C) Chocolade, M) Munt of V) Vanille?').lower()
+            smaak_v = input(f'Welke smaak wilt u voor {soort_ijs} nummer {i+1}? A) Aardbei, C) Chocolade of V) Vanille?').lower()
             c = False
             
-            if smaak_v in ['a','c','m','v']:
+            if smaak_v in ['a','c','v']:
                 c = False
                 if smaak_v == 'a':
                     Aardbei += 1
@@ -152,14 +150,11 @@ def get_smaak(aantal_bollejes,klant)-> list:
                 elif smaak_v == 'c':
                     Chocolade += 1
                     smaken_dict['Chocolade'] = Chocolade
-                elif smaak_v == 'm':
-                    Munt += 1
-                    smaken_dict['Munt'] = Munt
                 elif smaak_v == 'v':
                     Vanille += 1
                     smaken_dict['Vanille'] = Vanille
                 else:
-                    print("Sorry dat snap ik niet....")
+                    print(S_PRINT)
                     i -= 1
             else:
                 c = True
@@ -191,7 +186,7 @@ def Toppings():
                 Caramel_Saus += 1
                 Toppings_dict['Caramel_Saus'] = Caramel_Saus
             else:
-                print("Sorry dat snap ik niet....")
+                print(S_PRINT)
 
         else:
             T = True
@@ -228,7 +223,7 @@ while True:
         bon()
         break
     elif vraag != "ja":
-        print("Sorry, dat begrijp ik niet. Uw bestelling(en) worden afgedrukt:\n")
+        print("Sorry, dat begrijp ik niet.\n")
         bon()
         break
 
