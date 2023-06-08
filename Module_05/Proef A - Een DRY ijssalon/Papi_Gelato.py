@@ -1,4 +1,3 @@
-ORDERS = []
 PRIJZEN = {'Bolletjes':1.10 ,'Hoorntje':1.25,'Bakje':0.75 ,'Slagroom': 0.50 ,'Sprinkels':0.30 , "Caramel_Saus":0.90 , "L":9.80}
 BTW = 9
 
@@ -52,88 +51,75 @@ def get_ijs() -> list:
     else:
         ijs_dict['Toppings'] = Toppings()
 
-    
-    return ijs_dict     
-
+    return ijs_dict
     
 def bon():
-
     Totaal_bedrag = 0
     bakjes = 0
     hoorntjes = 0
     aantal_bolletjes = 0
     smaken_dict = {}
     Topping_dict = {}
-    #Totaal berekenen.
 
-    for i in ORDERS:
-        
+    # Totaal berekenen.
+    for i in BESTELLINGEN:
         aantal_bolletjes += i['bolletjes']
+
         if i['keuzen'] == 'hoorntje':
-            hoorntjes += 1
+            hoorntjes += 1 
         elif i['keuzen'] == 'bakje':
             bakjes += 1
-        
-            
+
         Toppings_v = i['Toppings']
-        if Toppings_v == {}:
-            pass
-        for key,value in Toppings_v.items():
+        for key, value in Toppings_v.items():
             if key in Topping_dict:
                 Topping_dict[key] += value
             else:
-                Topping_dict.update({key:value})
-                
+                Topping_dict.update({key: value})
 
         smaken = i['smaak'] 
-        for k,v in smaken.items():
+        for k, v in smaken.items():
             if k in smaken_dict:
                 smaken_dict[k] += v
             else:
-                smaken_dict.update({k:v})
+                smaken_dict.update({k: v})
 
+        Bereking_bolletjes = round(i['bolletjes'] * PRIJZEN['Bolletjes'], 3)
+        Bereking_keuzen_b = round(bakjes * PRIJZEN['Bakje'], 3)
+        Bereking_keuzen_h = round(hoorntjes * PRIJZEN['Hoorntje'], 3)
 
+        Totaal_bedrag += Bereking_bolletjes + Bereking_keuzen_h + Bereking_keuzen_b
 
-    Bereking_bolletjes = round(aantal_bolletjes * PRIJZEN['Bolletjes'],3)
-    Bereking_keuzen_b = round(bakjes * PRIJZEN['Bakje'],3)
-    Bereking_keuzen_h = round(hoorntjes * PRIJZEN['Hoorntje'],3)
-    
-    
-    Totaal_bedrag += Bereking_bolletjes + Bereking_keuzen_h + Bereking_keuzen_b 
-
-
-
-    # # Totaal printen
-    
+    # Totaal printen
     print('------["Papi Gelato"]--------\n')
-    
+
     if aantal_bolletjes > 0:
-        
-        for smaak, waarde in smaken_dict.items(): 
-            if not Topping_dict:
-                print(f"L.{smaak}        {waarde} * € {PRIJZEN['L']} = € {waarde * PRIJZEN['L']:.2f}")
-            else:
-                print(f"B.{smaak}        {waarde} * € {PRIJZEN['Bolletjes']} = € {waarde * PRIJZEN['Bolletjes']}") 
+        for smaak, waarde in smaken_dict.items():           
+            for u in BESTELLINGEN:
+                if u['soort_k'] == 'zakelijke_klant':
+                    print(f"L.{smaak}        {waarde} * € {PRIJZEN['L']} = € {round(waarde * PRIJZEN['L'], 2)}")
+                else:
+                    print(f"B.{smaak}        {waarde} * € {PRIJZEN['Bolletjes']} = € {round(waarde * PRIJZEN['Bolletjes'], 2)}")
 
     if hoorntjes > 0:
         print(f"Hoorntjes        {hoorntjes} * € {PRIJZEN['Hoorntje']} = € {Bereking_keuzen_h}")
     if bakjes > 0:
         print(f"Bakjes           {bakjes} * €{PRIJZEN['Bakje']} = € {Bereking_keuzen_b}")
-    topping_b = 0 
-    if Topping_dict != {}:
-        for k,v in Topping_dict.items():
-            topping_b = (PRIJZEN[k] * v)
+
+    topping_b = 0
+    if Topping_dict:
+        for k, v in Topping_dict.items():
+            topping_b += PRIJZEN[k] * v
             if k == 'Caramel_Saus' and hoorntjes > 0:
                 print(f"T.{k}           = € {topping_b - 0.30:.2f}")
             else:
-                print(f"T.{k}                  = € {topping_b}")
-
-
+                print(f"T.{k}                = € {topping_b}")
 
     print('                        --------- +')
-    if not Topping_dict:
-        berekening = round(sum(PRIJZEN['L'] * w for w in smaken_dict.values()), 2)
-        print(f'Totaal_bedrag                = € {berekening:.2f}')
+
+    berekening = sum(waarde * PRIJZEN['L'] for waarde in smaken_dict.values())
+    if Topping_dict == {}:
+        print(f'Totaal_bedrag                = € {berekening}')
         print(f"BTW:                         = € {berekening/100 * BTW:.2f}")
     else:
         print(f'Totaal_bedrag                = € {Totaal_bedrag + topping_b:.2f}\n')
@@ -225,23 +211,28 @@ def get_soort_klant():
             print("Sorry,dat snap ik niet...\n") 
 
   
+BESTELLINGEN = []
+laatste_bestelling = None
 
-    
 
-print()
 print("Welkom bij Papi Gelato\n")
-ORDERS.append(get_ijs())
 
+while True:
+    BESTELLINGEN.append(get_ijs())
+    laatste_bestelling = BESTELLINGEN[-1]
 
-d = True
-while d:
-    PRIJZEN_vraag = input("Wilt u nog meer bestellen? (ja/nee) :")
+    vraag = input("Wilt u nog meer bestellen? (ja/nee): ")
 
-    if PRIJZEN_vraag == "ja":
-        ORDERS.append(get_ijs())
-    elif PRIJZEN_vraag == "nee":
-        print("Hier zijn uw Bestelling:\n")
+    if vraag == "nee":
+        print("Hier zijn uw bestelling(en):\n")
         bon()
-        d = False
-    else:
-        print("Sorry,dat snap ik niet...\n")
+        break
+    elif vraag != "ja":
+        print("Sorry, dat begrijp ik niet. Uw bestelling(en) worden afgedrukt:\n")
+        bon()
+        break
+
+    print("Hier is uw laatste bestelling:")
+    bon()
+    print("------------------------------------")
+    BESTELLINGEN = []
