@@ -5,7 +5,7 @@ def get_aantal_bolletjes(klant)-> int:
     while True:
         try:
             if klant == 'zakelijke_klant':
-                aantal = int(input('Hoeveel liter wilt uw hebben? :'))
+                aantal = int(input('Hoeveel liter wilt uw bestellen? :'))
             elif klant == 'particuliere_klant':
                 aantal = int(input('Hoeveel bolletjes wilt uw hebben? :'))
             if aantal > 8:
