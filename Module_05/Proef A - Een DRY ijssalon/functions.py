@@ -1,4 +1,4 @@
-from Papi_Gelato import BESTELLINGEN
+
 
 PRIJZEN = {'Bolletjes':0.95 ,'Hoorntje':1.25,'Bakje':0.75 ,'Slagroom': 0.50 ,'Sprinkels':0.30 , "Caramel_Saus":0.90 , "L":9.80}
 BTW = 6
@@ -35,7 +35,7 @@ def get_hoorntje_of_bakje(aantal_bolletjes):
     
 
    
-def bon():
+def bon(BESTELLING,klant_soort):
     Totaal_bedrag = 0
     bakjes = 0
     hoorntjes = 0
@@ -44,7 +44,7 @@ def bon():
     Topping_dict = {}
 
     # Totaal berekenen.
-    for i in BESTELLINGEN:
+    for i in BESTELLING:
         aantal_bolletjes += i['bolletjes']
 
         if i['keuzen'] == 'hoorntje':
@@ -77,8 +77,8 @@ def bon():
 
     if aantal_bolletjes > 0:
         for smaak, waarde in smaken_dict.items():           
-            for u in BESTELLINGEN:
-                if u['soort_k'] == 'zakelijke_klant':
+            
+                if klant_soort == 'zakelijke_klant':
                     print(f"L.{smaak}        {waarde} * € {PRIJZEN['L']} = € {round(waarde * PRIJZEN['L'], 2)}")
                 else:
                     print(f"B.{smaak}        {waarde} * € {PRIJZEN['Bolletjes']} = € {round(waarde * PRIJZEN['Bolletjes'], 2)}")
@@ -100,7 +100,7 @@ def bon():
     print('                        --------- +')
 
     berekening = sum(waarde * PRIJZEN['L'] for waarde in smaken_dict.values())
-    if Topping_dict == {}:
+    if klant_soort == 'zakelijke_klant':
         print(f'Totaal_bedrag                = € {berekening}')
         print(f"BTW:                         = € {berekening/100 * BTW:.2f}")
     else:
@@ -144,7 +144,7 @@ def get_smaak(aantal_bollejes,klant)-> list:
 
     return smaken_dict
 
-def Toppings():
+def Get_toppings():
 
     Toppings_dict = {}
     Slagroom = 0
@@ -176,14 +176,14 @@ def Toppings():
     return Toppings_dict
 
 def get_soort_klant():
-    c = True
-    while c:
+    
+    while True:
         vraag = input("Bent u a) een particuliere klant of b) een zakelijke klant? (a of b): ").lower()
         if vraag == 'a':
-            c = False
+
             return 'particuliere_klant'
         elif vraag == 'b':
-            c = False
+            
             return 'zakelijke_klant'
         else:
             print("Sorry,dat snap ik niet...\n") 
