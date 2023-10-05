@@ -43,4 +43,4 @@ while True:
     else:
         print("Sorry, dat begrijp ik niet.\n")
 
-        # BESTELLINGEN = []
+   
