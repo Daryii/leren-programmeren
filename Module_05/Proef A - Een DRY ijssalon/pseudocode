@@ -1,30 +1,30 @@
-In het begin van het programma van Papi Gelato ontvang je een welkomsttekst.
-Stap 1: Je wordt gevraagd of je een zakelijke of particuliere klant bent. Op basis van je antwoord ga je door verschillende stappen.
+// In het begin van het programma van Papi Gelato ontvang je een welkomsttekst.
+// Stap 1: Je wordt gevraagd of je een zakelijke of particuliere klant bent. Op basis van je antwoord ga je door verschillende stappen.
 
-Als je een particuliere klant bent, doorloop je de volgende stappen:
-1. Je wordt eerst gevraagd hoeveel bolletjes ijs je wilt hebben.
-   Afhankelijk van je antwoord ga je naar verschillende stappen.
+// Als je een particuliere klant bent, doorloop je de volgende stappen:
+// 1. Je wordt eerst gevraagd hoeveel bolletjes ijs je wilt hebben.
+//    Afhankelijk van je antwoord ga je naar verschillende stappen.
 
-   - Als het door jou opgegeven aantal gelijk is aan of tussen de 4 en 8 ligt, krijg je de volgende tekst te zien: "Dan krijg je een {bakje} met {aantal} bolletje(s)".
+//    - Als het door jou opgegeven aantal gelijk is aan of tussen de 4 en 8 ligt, krijg je de volgende tekst te zien: "Dan krijg je een {bakje} met {aantal} bolletje(s)".
 
-   - Als het door jou opgegeven aantal groter is dan 8, krijg je de volgende tekst te zien: "Sorry, zulke grote bakken hebben we niet" en word je teruggestuurd naar stap 1, waar je opnieuw wordt gevraagd wat je wilt bestellen.
+//    - Als het door jou opgegeven aantal groter is dan 8, krijg je de volgende tekst te zien: "Sorry, zulke grote bakken hebben we niet" en word je teruggestuurd naar stap 1, waar je opnieuw wordt gevraagd wat je wilt bestellen.
 
-   - Als het door jou opgegeven aantal kleiner is dan of gelijk is aan 3 en groter dan 0, word je een specifieke vraag gesteld.
+//    - Als het door jou opgegeven aantal kleiner is dan of gelijk is aan 3 en groter dan 0, word je een specifieke vraag gesteld.
 
-2. Stap 2: Je wordt gevraagd welke smaken je wilt hebben voor elk bolletje of liter.
+// 2. Stap 2: Je wordt gevraagd welke smaken je wilt hebben voor elk bolletje of liter.
 
-3. Stap 3: Je wordt gevraagd welke topping je wilt hebben.
+// 3. Stap 3: Je wordt gevraagd welke topping je wilt hebben.
 
-4. Stap 4: De vraag luidt als volgt: "Wil je deze bolletjes in een hoorntje of een bakje?"
-   Als je antwoord een van de keuzes is, krijg je de volgende tekst te zien: "Hier is je {bakje of hoorntje} met {aantal_bolletjes} bolletjes."
+// 4. Stap 4: De vraag luidt als volgt: "Wil je deze bolletjes in een hoorntje of een bakje?"
+//    Als je antwoord een van de keuzes is, krijg je de volgende tekst te zien: "Hier is je {bakje of hoorntje} met {aantal_bolletjes} bolletjes."
 
-5. Stap 5: Je wordt gevraagd of je nog een bestelling wilt plaatsen.
-   Als je deze vraag met "ja" beantwoordt, wordt je laatste bestelling afgedrukt en ga je terug naar stap 1, waar je opnieuw wordt gevraagd wat je wilt bestellen.
+// 5. Stap 5: Je wordt gevraagd of je nog een bestelling wilt plaatsen.
+//    Als je deze vraag met "ja" beantwoordt, wordt je laatste bestelling afgedrukt en ga je terug naar stap 1, waar je opnieuw wordt gevraagd wat je wilt bestellen.
 
-   Als je de vraag met "nee" beantwoordt, krijg je de volgende tekst te zien: "Wordt jouw laatste bestelling afgedrukt" en stopt het programma.
+//    Als je de vraag met "nee" beantwoordt, krijg je de volgende tekst te zien: "Wordt jouw laatste bestelling afgedrukt" en stopt het programma.
 
-   Als je de vraag anders beantwoordt, krijg je de volgende tekst te zien: "Sorry, dat begrijp ik niet..."
+//    Als je de vraag anders beantwoordt, krijg je de volgende tekst te zien: "Sorry, dat begrijp ik niet..."
 
-Als je een zakelijke klant bent, doorloop je de volgende stappen:
-1. Je wordt eerst gevraagd hoeveel liter ijs je wilt bestellen.
-   Daarna ga je naar stap 3 en vervolgens naar stap 5.
+// Als je een zakelijke klant bent, doorloop je de volgende stappen:
+// 1. Je wordt eerst gevraagd hoeveel liter ijs je wilt bestellen.
+//    Daarna ga je naar stap 3 en vervolgens naar stap 5.
